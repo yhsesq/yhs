@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog bottom="4" columns="1" gap="4" icon="ico.gif" left="4" modal="true" property="encoding=ISO-8859-1;iconpath=;cp=" right="4" text="About" top="4" font="Dialog bold 14">
+  <label icon="splash.gif" />
+  <separator />
+  <textarea editable="false" name="ta_About" weightx="1" weighty="1" width="600" wrap="true" font="Dialog 12" background="255,255,255" foreground="0,51,102" />
+  <button halign="right" name="btn_Close" text="Close" valign="center" font="Dialog bold 12" />
+</dialog>
+

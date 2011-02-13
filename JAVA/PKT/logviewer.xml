@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<panel columns="1" gap="5" weightx="1" weighty="1" property="encoding=ISO-8859-1;iconpath=;cp=">
+  <textarea name="ta_logviewer" weightx="1" weighty="1" foreground="0,0,153" background="255,255,255" editable="false" wrap="true" />
+  <panel gap="5" weightx="1" border="true">
+    <panel bottom="6" gap="6" left="6" right="1" top="6" valign="top" weightx="1" background="71,71,106">
+      <button action="cancelXML" text="Close" valign="center" font="Dialog bold 12" />
+    </panel>
+  </panel>
+</panel>
+

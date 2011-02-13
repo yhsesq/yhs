@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Sealed: true
+Created-By: Yohann Sulaiman
+Main-Class: net.sf.pkt.PKTCLI

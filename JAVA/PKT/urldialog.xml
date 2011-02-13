@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog name="UrlDialog" font="Dialog bold 14" height="500" property="encoding=ISO-8859-1;buildpath=/pkt/pktxul;cls=" columns="1" top="12" left="10" bottom="12" right="12" gap="4" text="  Web Location" icon="world.gif" modal="true">
+  <panel weightx="1" valign="center" columns="2">
+    <label rowspan="2" icon="online.gif" />
+    <panel weighty="2" left="4" bottom="6" gap="6">
+      <label font="Dialog bold 12" halign="center" text="Address" />
+      <textfield name="tf_url" weightx="1" weighty="1" valign="center" text="http://pkt.sf.net/xul/demo.xml" columns="40" />
+    </panel>
+    <panel background="43,36,88" weightx="1" weighty="1" valign="center" top="4" left="4" bottom="4" right="4" gap="6" border="true">
+      <button name="btn_OK" font="Dialog bold 12" valign="center" text="OK" />
+      <button name="btn_Cancel" font="Dialog bold 12" valign="center" text="Cancel" />
+    </panel>
+  </panel>
+</dialog>
+

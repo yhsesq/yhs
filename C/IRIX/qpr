@@ -1,0 +1,5 @@
+lpr $1
+rem rcp $1 qe1:/tmp/$1
+rem rsh qe1 lpr /tmp/$1
+rem rsh qe1 rm /tmp/$1
+

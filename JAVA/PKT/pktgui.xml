@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<panel width="640" height="480" rowspan="0" colspan="0" property="encoding=ISO-8859-1;buildpath=;cls=" columns="1" border="true">
+	<panel width="640" height="240" property="encoding=ISO-8859-1;buildpath=;cls=" columns="2" border="true">
+  		<tree name="filetree" width="320" height="240" selection="single" angle="true" line="false" init="tinit(thinlet, this, filelist,grouplist,root)" action="tselected(thinlet,this,item)" expand="texpand(thinlet, this, item)" collapse="tcollapse(thinlet, item)"/>
+    			<panel width="320" height="240" columns="1">
+		<list name="filelist" width="320" height="220" selection="multiple">
+<popupmenu menushown="fops(thinlet,filelist,fpopsmenu)">
+<menu name="fpopsmenu" icon="info.gif" text=" "/>
+</popupmenu></list>
+
+    			<panel width="320" height="20" background="#92EDBA">
+
+<menubar tooltip="File Utilities"><menu name="filemenu" icon="new.gif" text=" ">
+<menuitem text="File Utilities"/><separator/>
+<menuitem text="Notepad with file finder/clip/srch-repl tools" action="launchedit()" icon="new.gif"/>
+<menuitem text="Hex Editor with converter / diff tools" action="hexed(thinlet)" icon="edit.gif"/>
+<menuitem text="File(s)/Dirs(s) Copy (or Merge) to File" action="fmpkt(thinlet,cdir,cloc)" icon="copy.gif"/>
+<menuitem text="Secure File(s)/Dir(s) Wipe / Erase" action="wipepkt(thinlet)" icon="remove.gif"/>
+<menuitem text="File(s)/Dir(s) CRLF to LF Conversion" action="crlfpkt(thinlet)" icon="field.gif"/>
+<menuitem text="Exit/Quit PKT" action="shutdown()" icon="jserv.gif"/></menu></menubar>
+
+			<label text="CopyPos:"/>
+			<spinbox name="cloc" text="0" minimum="0" maximum="99999999"/>
+			<label text="CopyToFile:"/>
+			<textfield name="cdir" text="./myfile.tst"/>
+    			</panel>
+    			</panel>
+	</panel>
+	<panel width="640" height="240" property="encoding=ISO-8859-1;buildpath=;cls=" columns="2" border="true" init="initall(thinlet,cmdl,statl,tpar,pwd,prog,status)">
+  		<panel width="120" height="240" columns="1">
+    			<label name="prog" width="120" height="10" icon="loaded.gif" />
+    			<label text="System status :-" />
+    			<label name="cmdl" text="SYSTEM READY" background="#9D9DE8"/>
+			<textarea width="120" height="200" name="statl" wrap="false" 
+text="Expand the directory,
+select one or more 
+files or dirs in 
+the file box (upper 
+right), then use 
+[Add] to add files 
+and hit [Process] 
+or [Create pkt] to 
+process them. All
+directories in the
+group are recursively
+processed." editable="false"/>
+  		</panel>
+		<panel width="520" height="240" columns="1">
+			<panel width="520" height="20" gap="2" background="#9D9DB8">
+        		<togglebutton name="tcomp" text="Compress" selected="true" icon="class.gif"/>
+        		<togglebutton name="tpkt" text="Binary" icon="bold.gif"/>
+        		<togglebutton name="tenc" text="Encrypted" icon="parameter.gif"/>
+			<passwordfield name="pwd" text="password"/>
+        		<combobox name="tpar" text="Parity off,0" icon="copy.gif" editable="false">
+			<choice text="Parity off,0"/>
+			<choice text="Parity 8.33%,24"/>
+			<choice text="Parity 8.69%,23"/>
+			<choice text="Parity 9.09%,22"/>
+			<choice text="Parity 9.52%,21"/>
+			<choice text="Parity 10.0%,20"/>
+			<choice text="Parity 10.5%,19"/>
+			<choice text="Parity 11.1%,18"/>
+			<choice text="Parity 11.7%,17"/>
+			<choice text="Parity 12.5%,16"/>
+			<choice text="Parity 13.3%,15"/>
+			<choice text="Parity 14.2%,14"/>
+			<choice text="Parity 15.3%,13"/>
+			<choice text="Parity 16.6%,12"/>
+			<choice text="Parity 18.1%,11"/>
+			<choice text="Parity 20.0%,10"/>
+			<choice text="Parity 22.2%,9"/>
+			<choice text="Parity 25.0%,8"/>
+			<choice text="Parity 28.5%,7"/>
+			<choice text="Parity 33.3%,6"/>
+			<choice text="Parity 40.0%,5"/>
+			<choice text="Parity 50.0%,4"/>
+			</combobox>
+			<button text="Create pkt" action="createpkt(thinlet,tcomp,tpkt,tenc,spinny,fsav)" icon="library.gif"/>
+    			</panel>
+		        <panel width="520" height="20" gap="2" background="#9D9DE8">
+			<button text="Add" icon="add.gif" action="groupadd(thinlet,this)"/>
+	     		<button text="Remove" icon="delete.gif" action="groupdel(thinlet,this)"/>
+			<button text="SaveDir" icon="save.gif" action="cwd(thinlet,fsav)"/>
+			<textfield name="fsav" text="./"/>
+			<label text="Split:" icon="saveas.gif"/>
+			<spinbox name="spinny" text="999" minimum="1" maximum="99999999" valign="center"/>
+
+<menubar><menu name="netmenu" icon="world.gif" text=" ">
+<menuitem text="Network Utilities"/><separator/>
+<menuitem text="Secure Shell v1 (SSH)" icon="host.gif" action="launchmt()"/>
+<menuitem text="Secure Shell v2 (SSH2)" icon="connect.gif" action="launchjc()"/>
+<menuitem text="Shell Execute (ChgDir Txt)" icon="reload.gif" action="shellex(thinlet,root)"/>
+<menuitem text="Secure Remote Access (VNC+SSH)" icon="world.gif" action="launchvnc()"/></menu></menubar>
+
+<menubar><menu name="helpmenu" icon="help.gif" text=" ">
+<menuitem text="Help Utilities"/><separator/>
+<menuitem text="Help / Tutorial Browser" icon="help.gif" action="launchbrowse()"/>
+<menuitem text="Scientific Calculator" icon="tip.gif" action="launchcalc()"/>
+<menuitem text="Unit Convertor" icon="api.gif" action="launchconv()"/>
+<menuitem text="World Time Toolkit" icon="worldplus.gif" action="launchclock()"/>
+<menuitem text="Virtual Unicode Keyboard" action="launchvk()" icon="new.gif"/>
+<separator/>
+<checkboxmenuitem group="sg" selected="true" text="System Theme" action="dchgcol(thinlet)"/>
+<checkboxmenuitem group="sg" selected="false" text="Sandstone Theme" action="schgcol(thinlet)"/>
+<checkboxmenuitem group="sg" selected="false" text="Ocean Theme" action="ochgcol(thinlet)"/>
+<checkboxmenuitem group="sg" selected="false" text="Modern Theme" action="mchgcol(thinlet)"/>
+</menu></menubar>
+			
+<label name="status" icon="loaded.gif"/>
+
+    			</panel>
+
+    			<panel width="520" height="20" background="#9D9DE8">
+
+<menubar><menu name="legacymenu" icon="guest.gif" text=" ">
+<menuitem text="Legacy Archiver Utilities"/><separator/>
+<menuitem text="List TAR Contents" icon="new.gif" action="tlegacy(thinlet)"/>
+<menuitem text="List TAR.BZ2 Contents" icon="new.gif" action="tIlegacy(thinlet)"/>
+<menuitem text="List TAR.GZ Contents" icon="new.gif" action="tzlegacy(thinlet)"/>
+<menuitem text="List ZIP Contents" icon="new.gif" action="Tlegacy(thinlet)"/>
+<menuitem text="List JAR Contents" icon="new.gif" action="Tlegacy(thinlet)"/>
+<menuitem text="Extract TAR Contents" icon="copy.gif" action="xlegacy(thinlet)"/>
+<menuitem text="Extract TAR.BZ2 Contents" icon="copy.gif" action="xIlegacy(thinlet)"/>
+<menuitem text="Extract TAR.GZ Contents" icon="copy.gif" action="xzlegacy(thinlet)"/>
+<menuitem text="Extract ZIP Contents" icon="copy.gif" action="Xlegacy(thinlet)"/>
+<menuitem text="Extract JAR Contents" icon="copy.gif" action="Xlegacy(thinlet)"/>
+<menuitem text="Create TAR File" icon="folder.gif" action="clegacy(thinlet)"/>
+<menuitem text="Create TAR.BZ2 File" icon="folder.gif" action="cIlegacy(thinlet)"/>
+<menuitem text="Create TAR.GZ File" icon="folder.gif" action="czlegacy(thinlet)"/>
+<menuitem text="Create ZIP File" icon="folder.gif" action="Clegacy(thinlet)"/>
+<menuitem text="Create JAR File" icon="folder.gif" action="Jlegacy(thinlet)"/></menu></menubar>
+
+<menubar><menu name="securitymenu" icon="login.gif" text=" ">
+<menuitem text="Security Utilities"/><separator/>
+<menuitem text="Hash Database" action="hashpkt(thinlet)" icon="print.gif"/>
+<menuitem text="Manual Spinlock Control" action="setspinlock()" icon="exception.gif"/>
+<menuitem text="View Console" action="launchedit(thinlet,statl)" icon="host.gif"/>
+<checkboxmenuitem text="Use AES 256-bit Cipher" selected="true" name="acO" action="chgcipher(thinlet,acO,bcO,ccO)" />
+<checkboxmenuitem text="Use AES 128-bit Cipher" selected="false" name="bcO" action="chgcipher(thinlet,acO,bcO,ccO)" />
+<checkboxmenuitem text="Use Blowfish 128-bit Cipher" selected="false" name="ccO" action="chgcipher(thinlet,acO,bcO,ccO)" />
+<menuitem text="Wipe PKT Log on exit" action="wipelog()" icon="undo.gif"/></menu></menubar>
+     			<button text="ChgRoot" action="tinit(thinlet, filetree, filelist,grouplist,root)" icon="folder.gif"/>
+			<textfield name="root" text=" "/>
+     			<togglebutton name="extrme" text="Extract" icon="pagesetup.gif"/>
+     			<togglebutton name="decme" text="Decrypt" icon="searchnext.gif"/>
+     			<togglebutton name="repairme" text="Repair" icon="undo.gif" selected="true"/>
+     			<button text="Process pkt" action="decpkt(thinlet,repairme,decme,extrme,fsav)" icon="library.gif"/>
+    			</panel>
+    			<panel width="520" height="180">
+    			<list name="grouplist" width="520" height="180" selection="multiple">
+<popupmenu  menushown="pops(thinlet,grouplist,popsmenu)" >
+<menu name="popsmenu" icon="info.gif" text=" " />
+</popupmenu>
+			</list>
+			</panel>
+		</panel>
+	</panel>
+</panel>

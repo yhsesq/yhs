@@ -1,0 +1,51 @@
+##################################################
+#                                                #
+#   Makefile for CT Image Application Program    #
+#                                                #
+##################################################
+# Some common definitions...
+
+RM = rm -f
+CXX = cc
+
+# Compiler flags, paths for include files and libraries
+
+CFLAGS = -O2 -v -mips1
+INCLUDES = -I. -I/usr/include -I/usr/include/X11 -I/usr/include/sys
+XMLIBS = -lXm -lXt -lXmu -lX11 -lmalloc -lGL -lGLU -lXext -lm
+
+FILES = slice.o \
+        label.o \
+        menu.o \
+        open.o \
+        save.o \
+        exit.o \
+        measure.o \
+        region.o \
+        edge.o \
+        ctomass.o \
+	watershed.o \
+	editing_tools.o \
+	region_ops.o \
+	zoom.o \
+	split_merge.o \
+	neighbour.o \
+        print.o \
+	filters.o \
+	version.o
+
+# Rule to create .o files from .c files
+.c.o:
+	$(RM) $@
+	$(CXX) -c $(CFLAGS) $(INCLUDES) $*.c
+	
+# Targets...
+
+all::	slice
+
+slice: $(FILES)
+	$(RM) $@
+	$(CXX) -o $@ $(CFLAGS) $(INCLUDES) $(FILES) $(XMLIBS) -lm
+	strip slice
+	
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for PKT --> 
+<jnlp spec="1.0+" codebase="http://pkt.sf.net/" href="pkt.jnlp">
+	<information>
+		<title>PKT</title>
+		<vendor>pkt.sf.net</vendor>
+		<homepage href="http://pkt.sf.net" />
+		<description>PKT, an XML Packet Archiver</description>
+		<description kind="short">Packet Archiver</description>
+	</information>
+	<security><all-permissions/></security>
+	<resources>
+		<j2se version="1.1+"/>		 
+		<jar href="pktgui.jar" />		
+	</resources>
+	<application-desc main-class="net.sf.pkt.PKTCLI">
+	<argument>JWS</argument>
+	</application-desc>
+</jnlp>

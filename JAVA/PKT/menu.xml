@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<menubar weightx="1">
+	<menu mnemonic="0" text="File">
+		<menuitem icon="new.gif" mnemonic="0" text="New"/>
+		<menuitem icon="open.gif" text="Open..."/>
+		<menuitem icon="save.gif" text="Save"/>
+		<menuitem icon="saveas.gif" text="Save As..."/>
+		<separator/>
+		<menuitem icon="pagesetup.gif" text="Page Setup"/>
+		<menuitem icon="print.gif" text="Print"/>
+		<separator/>
+		<menuitem text="Exit"/>
+	</menu>
+	<menu text="Edit">
+		<menuitem icon="undo.gif" text="Undo"/>
+		<separator/>
+		<menuitem icon="cut.gif" text="Cut"/>
+		<menuitem icon="copy.gif" text="Copy"/>
+		<menuitem icon="paste.gif" text="Paste"/>
+		<menuitem icon="delete.gif" text="Delete"/>
+		<separator/>
+		<menuitem text="Select All"/>
+	</menu>
+	<menu text="Search">
+		<menuitem icon="find.gif" text="Find..."/>
+		<menuitem icon="findagain.gif" text="Find Next"/>
+	</menu>
+	<menu text="Help">
+		<menuitem icon="help.gif" text="Help Topics"/>
+		<separator/>
+		<menuitem icon="about.gif" text="About"/>
+	</menu>
+</menubar>

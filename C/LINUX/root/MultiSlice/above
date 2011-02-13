@@ -1,0 +1,5 @@
+rm above.tmp
+mv $1 above.tmp
+cat hdr >$1
+cat above.tmp >>$1
+

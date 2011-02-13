@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog font="Dialog bold 14" property="encoding=ISO-8859-1;buildPath=/pkt/pktxul;cls=" columns="2" top="4" gap="4" text="Find Text" icon="search.gif" modal="true" border="false">
+  <panel columns="1" top="6" left="6" bottom="6" right="6" gap="6">
+    <panel colspan="2" top="6" left="4" bottom="6" right="4" gap="6" border="true">
+      <label text="Text to find:" />
+      <textfield name="tf_Text" weightx="1" columns="40" />
+    </panel>
+    <panel background="204,204,204" weightx="1" valign="center" columns="4" top="6" left="6" bottom="6" right="6" gap="4" border="true">
+      <label rowspan="2" weightx="1" valign="top" text="Options:" />
+      <checkbox name="chk_names" weightx="1" text="Widget names only" selected="true" group="opt" />
+      <separator rowspan="2" />
+      <checkbox name="chk_partial" rowspan="2" weightx="1" halign="center" valign="top" text="Partial match" selected="true" />
+      <checkbox name="chk_all" text="All widget properties" group="opt" />
+    </panel>
+    <panel background="71,71,106" colspan="2" weightx="1" valign="center" top="6" left="6" bottom="6" right="6" gap="6" border="true">
+      <button name="btn_OK" font="Dialog bold 12" text="OK" />
+      <button name="btn_Cancel" font="Dialog bold 12" text="Cancel" />
+    </panel>
+  </panel>
+</dialog>
+

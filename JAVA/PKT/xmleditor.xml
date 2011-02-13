@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<panel weightx="1" weighty="1" property="encoding=ISO-8859-1;buildpath=/pkt/pktxul;cls=" columns="1" gap="5">
+  <textarea name="ta_xmleditor" font="DialogInput 12" foreground="0,0,153" weightx="1" weighty="1" action="xmlChanged" />
+  <panel weightx="1" gap="5">
+    <panel background="71,71,106" weightx="1" valign="top" top="6" left="6" bottom="6" right="1" gap="6" border="true">
+      <button name="btn_xmledit_ok" enabled="false" font="Dialog bold 12" valign="center" text="OK" action="okXML" />
+      <button name="btn_xmledit_cancel" font="Dialog bold 12" halign="center" valign="center" text="Cancel" action="cancelXML" />
+      <button name="btn_xmledit_test" font="Dialog bold 12" valign="center" text="Validate" action="xmlValidate" />
+    </panel>
+  </panel>
+</panel>
+

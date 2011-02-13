@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<panel name="Pxuldor" background="204,204,204" weightx="1" weighty="1" property="encoding=ISO-8859-1;buildPath=/pkt/pktxul;cls=net.sf.pkt.PKTXUL" columns="1" gap="4">
+  <menubar name="Menubar" weightx="1">
+    <menu name="FileMenu" text="File" mnemonic="0">
+      <menuitem name="mi_new" text="New" icon="new.gif" action="newDOM()" mnemonic="0" />
+      <menuitem name="mi_open" text="Open File..." icon="open.gif" action="open" />
+      <menu name="ReopenMenu" enabled="false" text="Reopen" icon="folder.gif" />
+      <menuitem name="mi_OpenURL" text="Open Web Location ..." icon="world.gif" />
+      <separator />
+      <menuitem name="mi_save" text="Save" icon="save.gif" action="save" />
+      <menuitem name="mi_saveas" text="Save As..." icon="saveas.gif" action="saveas" />
+      <separator />
+      <menuitem name="mi_import" text="Import (Sub-)Tree" icon="import.gif" action="importNode()" />
+      <menuitem name="mi_export" text="Export (Sub-)Tree" icon="export.gif" action="exportNode()" />
+      <separator />
+      <menuitem name="mi_exit" text="Exit" icon="login.gif" action="exit()" mnemonic="1" />
+    </menu>
+    <menu name="SearchMenu" text="Search" mnemonic="0">
+      <menuitem name="mi_find" text="Find..." icon="search.gif" />
+      <menuitem name="mi_findnext" enabled="false" text="Find Next" icon="searchnext.gif" action="searchAttrAgain" mnemonic="5" />
+    </menu>
+    <menu name="Project" text="Project">
+      <menuitem name="mi_PrjSettings" text="Settings..." icon="jserv.gif" />
+    </menu>
+    <menu name="OptionsMenu" text="Options">
+      <checkboxmenuitem text="Show Toolbar" selected="true" action="toogleToolbar(this.selected)" />
+      <checkboxmenuitem name="cbmi_purge" text="Purge Log on Exit" selected="true" action="setPurgeLog(this.selected)" />
+      <separator />
+      <checkboxmenuitem name="SEVERE" selected="true" text="Log- Level: SEVERE" action="setLogLevel(this.name)" group="LOG_LEVEL" />
+      <checkboxmenuitem name="WARNING" text="Log- Level: WARNING" action="setLogLevel(this.name)" group="LOG_LEVEL" />
+      <checkboxmenuitem name="INFO" text="Log- Level: INFO" action="setLogLevel(this.name)" group="LOG_LEVEL" />
+      <checkboxmenuitem name="CONFIG" text="Log- Level: CONFIG" action="setLogLevel(this.name)" group="LOG_LEVEL" />
+      <checkboxmenuitem name="FINEST" text="Log- Level: FINEST" action="setLogLevel(this.name)" group="LOG_LEVEL" />
+    </menu>
+    <menu name="HelpMenu" text="Help">
+      <menuitem name="mi_log" text="Show LogFile" icon="history.gif" action="showLog" />
+      <menuitem name="mi_About" text="About" icon="info.gif" />
+    </menu>
+  </menubar>
+  <panel name="Toolbar" background="204,204,204" weightx="1" top="1" left="4" bottom="2" right="4" gap="4">
+    <separator />
+    <button name="label" tooltip="Label" icon="label.gif" action="addComponent(this.name)" />
+    <button name="button" tooltip="Button" icon="button.gif" action="addComponent(this.name)" />
+    <button name="togglebutton" tooltip="Toggle Button" icon="togglebutton.gif" action="addComponent(this.name)" />
+    <button name="radiobutton" tooltip="Radio Button" icon="radiobutton.gif" action="addComponent(this.name)" />
+    <button name="checkbox" tooltip="Checkbox" icon="checkbox.gif" action="addComponent(this.name)" />
+    <button name="combobox" tooltip="Combobox" icon="combobox.gif" action="addComponent(this.name)" />
+    <button name="spinbox" tooltip="SpinBox" icon="spinbox.gif" action="addComponent(this.name)" />
+    <button name="combobox" tooltip="Combobox" icon="combobox.gif" action="addComponent(this.name)" />
+    <button name="choice" tooltip="Choice" icon="choice.gif" action="addComponent(this.name)" />
+    <button name="slider" tooltip="Slider" icon="slider.gif" action="addComponent(this.name)" />
+    <button name="progressbar" tooltip="Progressbar" icon="progressbar.gif" action="addComponent(this.name)" />
+    <button name="textfield" tooltip="Text Field" icon="textfield.gif" action="addComponent(this.name)" />
+    <button name="passwordfield" tooltip="Password Field" icon="password.gif" action="addComponent(this.name)" />
+    <button name="textarea" tooltip="Text Area" icon="textarea.gif" action="addComponent(this.name)" />
+    <button name="panel" tooltip="Panel" icon="panel.gif" action="addComponent(this.name)" />
+    <button name="splitpane" tooltip="Split Pane" icon="splitpane.gif" action="addComponent(this.name)" />
+    <button name="tabbedpane" tooltip="Tabbed Pane" icon="tabbedpane.gif" action="addComponent(this.name)" />
+    <button name="tab" tooltip="Tab" icon="tab.gif" action="addComponent(this.name)" />
+    <button name="dialog" tooltip="Dialog" icon="dlg.gif" action="addComponent(this.name)" />
+    <button name="list" tooltip="List" icon="list.gif" action="addComponent(this.name)" />
+    <button name="item" tooltip="List item" icon="listitem.gif" action="addComponent(this.name)" />
+    <button name="table" tooltip="Table" icon="table.gif" action="addComponent(this.name)" />
+    <button name="header" tooltip="Table Header" icon="header.gif" action="addComponent(this.name)" />
+    <button name="column" tooltip="Table Column" icon="column.gif" action="addComponent(this.name)" />
+    <button name="row" tooltip="Table Row" icon="row.gif" action="addComponent(this.name)" />
+    <button name="cell" tooltip="Table Cell" icon="cell.gif" action="addComponent(this.name)" />
+    <button name="tree" tooltip="Tree Control" icon="tree.gif" action="addComponent(this.name)" />
+    <button name="node" tooltip="Node" icon="node.gif" action="addComponent(this.name)" />
+    <button name="menubar" tooltip="Menubar" icon="menubar.gif" action="addComponent(this.name)" />
+    <button name="menu" tooltip="Menu" icon="menu.gif" action="addComponent(this.name)" />
+    <button name="menuitem" tooltip="Menu Item" icon="popupmenu.gif" action="addComponent(this.name)" />
+    <button name="popupmenu" tooltip="Popup Menu" icon="popupmenu.gif" action="addComponent(this.name)" />
+    <button name="checkboxmenuitem" tooltip="Checkbox Menu Item" icon="checkbox.gif" action="addComponent(this.name)" />
+    <button name="radiobuttonmenuitem" tooltip="Radio Button Menu Item" icon="radiobutton.gif" action="addComponent(this.name)" />
+    <button name="separator" tooltip="Separator" icon="separator.gif" action="addComponent(this.name)" />
+  </panel>
+  <separator />
+  <splitpane weightx="1" weighty="1" divider="240">
+    <splitpane name="sp_dom" weighty="1" orientation="vertical" divider="240">
+      <panel columns="1" top="4" left="4" bottom="8" right="4" gap="4">
+        <tree name="DOMTree" weightx="1" weighty="1" action="treeEventHandler" />
+        <panel name="pnl_Buttons" background="204,204,255" columns="8" top="2" left="4" bottom="4" right="2" gap="3" border="true">
+          <combobox name="Widgets" colspan="2" weightx="1" valign="top" text="Widgets" columns="80" editable="false" action="addComponent(this.selected)" icon="add.gif" />
+          <button name="btn_Up" tooltip="Move Node Up" icon="up.gif" action="moveNode(this.name)" />
+          <separator rowspan="2" />
+          <button name="btn_cpy" tooltip="Copy Node" icon="copy.gif" action="copyNode()" />
+          <button name="btn_pst" enabled="false" tooltip="Paste Node" icon="paste.gif" action="pasteNode()" />
+          <separator rowspan="2" />
+          <button name="btn_xml" tooltip="Show XML" icon="log.gif" action="editXML()" />
+          <button name="btn_log" tooltip="Show Log.File" icon="history.gif" action="showLog()" />
+          <button name="btn_pull" tooltip="Pull Node Up" weightx="1" halign="right" icon="left.gif" action="pullNode()" />
+          <button name="btn_Dn" tooltip="Move Node Down" icon="down.gif" action="moveNode(this.name)" />
+          <button name="btn_cut" tooltip="Cut Node" icon="cut.gif" action="cutNode()" />
+          <button name="btn_del" tooltip="Remove Node" icon="del.gif" action="removeNode()" />
+          <button name="btn_vw" tooltip="Preview Layout" icon="host.gif" action="preview()" />
+        </panel>
+      </panel>
+      <panel columns="1" top="4" left="4" right="4" gap="4">
+        <panel columns="2" bottom="4" gap="10">
+          <label font="Serif bold 14" text="Component:" />
+          <label name="CompName" font="Dialog italic 12" />
+        </panel>
+        <table name="Properties" weightx="1" weighty="1" action="tableEventHandler">
+          <header>
+            <column name="col_Name" text="Name" sort="ascent" />
+            <column text="Value" />
+          </header>
+        </table>
+        <panel name="EditPanel" background="204,204,255" weightx="1" top="4" left="4" bottom="20" right="4" gap="7" border="true">
+          <textfield name="PropertyValue" columns="30" />
+          <button name="btn_Update" text="Update" action="buttonEventHandler" />
+        </panel>
+      </panel>
+    </splitpane>
+    <panel background="204,204,255" weightx="1" weighty="1" top="4" left="4" bottom="4" right="4">
+      <panel name="pnl_Preview" weightx="1" weighty="1" top="4" left="4" bottom="4" right="4" border="true" />
+    </panel>
+  </splitpane>
+  <panel weightx="1" top="1" left="4" bottom="4" right="4" gap="4" border="true">
+    <label font="Dialog bold 12" text="Status:" />
+    <label name="lbl_Status" font="Dialog 10" />
+  </panel>
+</panel>
+
