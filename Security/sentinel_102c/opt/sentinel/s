@@ -1,0 +1,6 @@
+cp sentinel.c sentinel.bak
+pico sentinel.c
+make 
+rm -f *.o
+
+

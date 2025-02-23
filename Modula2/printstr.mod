@@ -1,0 +1,10 @@
+MODULE P;
+VAR
+
+m : ARRAY [0..100] OF CHAR;
+
+BEGIN
+
+m:="POOF";
+
+END P.

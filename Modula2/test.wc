@@ -1,0 +1,16 @@
+Word-Counter Test Table
+-----------------------
+
+Blank Lines
+
+This is a test of semi-colons; and; ; more ;;;;
+This is a test, of commas, and ,,commas.
+This is a test of apostrophes',hyphens and full-stops...
+one-two one-two three four five,six;seven . eight nine-ten nine-ten
+-------------------------------------------------------------------
+
+Information on this file :-
+
+Total no. of lines : 12.
+Total no. of characters : 440. 
+Total no. of words : 59.

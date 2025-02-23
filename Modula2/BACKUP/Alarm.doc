@@ -1,0 +1,114 @@
+Alarm(3)							Alarm(3)
+
+NAME
+
+  Alarm - Sets an alarm in 12/24 hour times and launches alarmdaemon 
+
+	in the background.
+
+
+SYNOPSIS
+
+  Alarm is a simple script consisting of two parts. The first one is 
+
+  a simple script called Alarm which inputs and allows the second
+
+  script called alarmdaemon to be launched in the background. The daemon
+
+  sleeps until the time specified is reached and then triggers that alarm
+
+  off in intervals of 5 , 3 , 1 and 0 minutes to the specified alarm time.
+
+
+PARAMETERS
+
+	Alarm [hh] [mm]         -> 24 hour time
+                        or
+        Alarm [hh] [mm] [pm/am] -> 12 hour time
+
+
+  Simply typing Alarm without any paramenters will display the screen above.
+
+  To launch alarm simply type in the hours and minutes (time of day) to trigger
+
+  the alarm at that speicified time.
+
+DESCRIPTION
+
+  A simple utility to set one alarm and launch a daemon in the background.
+
+  Uses multithreading and may conflict with screen output from other programs.
+
+NOTES
+
+  A sample demonstration file Alarm.demo shows the precise working of this 
+
+  utility in real time in the background.
+
+RETURN VALUES
+
+  A value of 0 is returned if the alarm is set, 1 or greater indicate errors.
+
+  Output is relatively verbose and errors are displayed on the screen. 
+
+  However, in the event of this utility being called from another program,
+
+  the errorlevels will be set.
+
+ERRORS
+
+  A time specified previous to this time generate errors. Similarly,
+
+  a time greater that 12 00 specified with an am/pm prefix will generate
+
+  an error. Hours over 24 or less that 0 generate errors. Minutes over 
+
+  60 generate errors too. The alarm is accurate to within +/- 5 secs
+
+  of the present time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

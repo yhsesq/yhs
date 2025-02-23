@@ -1,0 +1,157 @@
+Sentinel v1.0.2c (Linux version. Portable to most unixes.)
+----------------
+[README File v0.01a]
+
+Download
+--------
+
+http://zurk.netpedia.net
+
+Installation 
+------------
+
+Note that by downloading this file you have agreed to the terms this 
+program is distrbuted under. Read the License section to
+see the licensing terms.
+It is recommended that you read the section "Readme" in this file 
+before installing. However, for those who are too lazy to go
+that far, here is the simplified standard installation procedure :
+
+0] su or login as root.
+1] Untar the distribution. If you are reading this you should have done this already.
+2] Use vi/emacs/jot/pico to edit the file sentinel.c...Somewhere near the beginning you should see a
+key variable demarcated by huge asterisk comments in CAPS. Change the hex characters (use 0-9,A-F in
+any combo) for the key variable to something random. This is your private key.( key={..} )
+3] Type : "make" and wait for it to finish compiling.
+4] Type : "rm sentinel.c" (i.e. erase off the file sentinel.c with your secret key)
+5] Type : "mkdir /opt/sentinel" (i.e. make the directory /opt/sentinel)
+6] Type : "cp sentinel /opt/sentinel" (i.e. copy the sentinel executable to /opt/sentinel)
+7] Type : "cd /opt/sentinel" (i.e. change to the sentinel directory)
+8] Use vi/jot/emacs/pico to create a file called sentinel.conf
+------------------------------------
+e.g. Sample sentinel.conf file :
+/usr
+/bin
+-------------------------------------
+The sentinel.conf file is just a list of directories which you want checked. It must be
+in /opt/sentinel, but can be anything you want. Its recursive - use only the base directory
+and it will check any other directories inside the base one. Dont put *anything* in the file
+other than directories you want checked. See the sample sentinel.conf file with the tar package.
+9] Type : "chmod 700 /opt/sentinel/sentinel" (i.e. change the file mode to root only perms)
+10] Type : "./sentinel -init" (i.e. run the executable with the -init option)
+11] Now run the command "/opt/sentinel/sentinel -check" whenever you want to check the directories.
+Remember that everything is logged to the logfile /opt/sentinel/sentinel.log and stored in plain
+ascii text. Always run sentinel as root (even when running it with the -check option). 
+-----End of installation instructions----------
+
+Note that you can run it with the nice command in the background automatically with crontab at
+various intervals.
+
+License
+-------
+/********************************************************************
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ ******************************************************************** */
+
+See license.txt included with the distribution for the full license terms. 
+
+Readme
+------
+
+Sentinel is designed to detect changes to the integrity of 
+directories and files on a disk. It tries to defeat the usual 
+attacks (even by persons with root/superuser equivalent access) 
+that have plagued other products such as the commercial 
+"Tripwire(TM)" or viper. 
+Note that sentinel will not try to "rebuild", "repair" or 
+even inform you how severe the changes are or whether your
+system has been compromised. It is *not* a security system. 
+It is simply a file/disk integrity tool. If your system is hit
+by hackers/crackers/script kiddies etc, sentinel will make you aware
+of changes to files or will simply terminate with an error if its
+own files are compromised. It is recommended that the only corrective
+action you can take is :
+FORMAT/REINITIALISE THE DRIVE(S) ON YOUR SYSTEM.
+FORMAT/REINITIALISE THE DRIVE(S) ON ANY SYSTEMS WHICH HAVE TRUSTED YOUR SYSTEM.
+REINSTALL THE OS ON ALL AFFECTED SYSTEMS.
+CHANGE ALL PASSWORDS.
+INSTALL ANY UPDATES/PATCHES.
+
+Remember : When in doubt, be paranoid.
+
+[Security]
+----------
+
+Sentinel relies on the RIPEMD 160bit  MAC algorithm (believed to be
+more secure than MD5 (which is 128bits) and not covered by patents).
+It will protect any file/directory structure (max path length is 16,384 
+bytes which should be enough for most systems i can think of, including 
+an origin 2000 supercomputer that i tested it on) using a 160 bit
+signature that is tied to your secret key.
+It is extremely hard for any attackers to compromise the RIPEMD signature,
+hence we can regard it as secure. Sentinel adds the signature to a database
+which is stored as plaintext. A database signature is then computed which is
+also stored and checked each time the database is opened. New signatures
+are created everytime the database is rebuilt. In addition it also computes
+and adds a signature for the logile where all events are stored and for the
+executable itself. These are also checked when the database is opened. In
+addition it also checks for root access to prevent users from compromising it 
+(and it is recommended that you chmod 700 the sentinel file with root ownership. 
+Do *not* suid root the executable). 
+
+
+[Performance]
+-------------
+
+It should be fast on most systems. On my K6-2 it can max out the disk transfer 
+(20MBps SCSI drive) while using only 30% of the CPU for computing the signatures 
+in the background. The disk transfer rate is the only limitation, the CPU of the 
+machine should not affect it significantly (unless you use it on a 386). On a 
+486 it consumed 80% of the CPU and maxed out the disk. Linux caching is efficient
+enough so that frequent read/writes from the temp file should not be a problem.
+This program can be run in the background (its less of a memory hog than an httpd 
+fork) while doing checks.
+
+[Attacks]
+---------
+
+One obvious attack is the simplest one : Trojan Horse attack. If the executable
+is replaced with a trojan horse (fairly easy since source code is available),
+your security envelope is effectively eliminated. Hence it is recommended that
+after compiling you download the Sverify package and run it. Record the RIPEMD-160
+signature obtained, the print it out or write it down. You can periodically download
+the Sverify package (or burn it on CDR/WORM) and run it against the executable. It
+should generate the same signature every time or the executable is a trojan (if this 
+is the case it is recommended you follow the usual format/reinstall/change 
+passwords/install patches). 
+Another attack is a key compromise attack. If the attacker(s) obtain access to 
+your secret key you are basically fscked since they can now generate signatures
+for all the files and compromise them in any way. Hence it is highly recommended
+you follow the correct installation procedure and ensure that the C source code
+with your unique key is deleted after sentinel is recompiled. Treat the sentinel 
+file like a PGP secret keyfile. 
+A third attack is a write intercept attack where the data written to the disk is 
+moved to another disk. This is fairly hard to pull off and the probability of it
+is fairly low. In any event sentinel tries to defeat such attacks by ensuring it
+has locked the files which it writes to for the duration until the signature is
+computed. It also has a sentinel.lock file to prevent more than 1 copy of sentinel 
+running out of the same directory at 1 time.
+
+If anyone can send me any other possible attacks/scenarios and/or how to defeat them
+it would be appreciated. 
+
+
+<EOF>
+

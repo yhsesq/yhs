@@ -1,0 +1,26 @@
+cd lzo
+./configure
+make
+cd ..
+cd stub
+make clean
+make
+make stubber
+make
+make stubencode
+cd ..
+cd src
+make clean
+make
+cd ..
+cd lzo 
+make distclean
+cd ..
+cd stub
+make clean
+cd ..
+cd src
+cp exepak ..
+make clean
+cd ..
+

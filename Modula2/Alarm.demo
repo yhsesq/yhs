@@ -1,0 +1,133 @@
+Script started on Mon Mar 18 16:07:21 1996
+scriptss$ ps
+  PID TTY      S           TIME COMMAND
+17958 ttyre    S  +     0:00.03 sh -is
+ 1355 ttye2    S  +     0:00.04 script out 
+ 7731 ttye2    S  +     0:00.02 -sh (sh)
+10271 ttye2    S  +     0:00.01 script out 
+28131 ttye2    S  +     0:05.02 -sh (sh)
+scriptss$ date
+Mon Mar 18 16:07:26 GMT 1996
+scriptss$ Alarm 16 16
+scriptss$ 
+
+AlarmDaemon ... Launched ... pid 27274
+
+scriptss$ ps
+  PID TTY      S           TIME COMMAND
+13461 ttyre    S  +     0:00.01 sleep 10
+17958 ttyre    S  +     0:00.06 sh -is
+27274 ttyre    S  +     0:00.07 sh -is
+ 1355 ttye2    S  +     0:00.05 script out 
+ 7731 ttye2    S  +     0:00.02 -sh (sh)
+10271 ttye2    S  +     0:00.02 script out 
+28131 ttye2    S  +     0:05.02 -sh (sh)
+scriptss$ date
+Mon Mar 18 16:07:42 GMT 1996
+scriptss$ date
+Mon Mar 18 16:08:34 GMT 1996
+scriptss$ date
+Mon Mar 18 16:09:45 GMT 1996
+scriptss$ date
+
+WARNING : Alarm is set to ring in [5] minutes.
+
+
+
+Mon Mar 18 16:10:35 GMT 1996
+scriptss$ ls -l
+total 11
+-rwx------   1 yhs      eng         2214 Mar 18 15:27 Alarm
+-rwx------   1 yhs      eng         2230 Mar 18 10:23 Alarm.bak
+-rw-------   1 yhs      eng         1761 Mar 18 16:02 Alarm.doc
+drwx------   2 yhs      eng          512 Mar 18 15:20 BACKUP
+-rwx------   1 yhs      eng          709 Mar 18 16:01 alarmdaemon
+-rwx------   1 yhs      eng          612 Mar 18 14:39 alarmdaemon.bak
+-rw-------   1 yhs      eng            0 Mar 18 16:07 out?
+scriptss$ 
+
+WARNING : Alarm is set to ring in [3] minutes.
+
+
+
+scriptss$ ls -l
+total 11
+-rwx------   1 yhs      eng         2214 Mar 18 15:27 Alarm
+-rwx------   1 yhs      eng         2230 Mar 18 10:23 Alarm.bak
+-rw-------   1 yhs      eng         1761 Mar 18 16:02 Alarm.doc
+drwx------   2 yhs      eng          512 Mar 18 15:20 BACKUP
+-rwx------   1 yhs      eng          709 Mar 18 16:01 alarmdaemon
+-rwx------   1 yhs      eng          612 Mar 18 14:39 alarmdaemon.bak
+-rw-------   1 yhs      eng            0 Mar 18 16:07 out?
+scriptss$ cd BACKUP
+scriptss$ date
+Mon Mar 18 16:13:47 GMT 1996
+scriptss$ ls
+Alarm            Alarm.bak        Alarm.doc        alarmdaemon      alarmdaemon.bak
+scriptss$ pwd
+/mnt/user5/y/yhs/COURSE_ALARM/BACKUP
+scriptss$ cd ..
+scriptss$ pwd
+/mnt/user5/y/yhs/COURSE_ALARM
+scriptss$ 
+
+WARNING : Alarm is set to ring in [1] minute.
+
+
+
+scriptss$ pwd
+/mnt/user5/y/yhs/COURSE_ALARM
+scriptss$ ls -l
+total 15
+drwx------   3 yhs      eng          512 Mar 18 16:07 .
+drwxr-xr-x  24 yhs      eng         2560 Mar 18 14:23 ..
+-rwx------   1 yhs      eng         2214 Mar 18 15:27 Alarm
+-rwx------   1 yhs      eng         2230 Mar 18 10:23 Alarm.bak
+-rw-------   1 yhs      eng         1761 Mar 18 16:02 Alarm.doc
+drwx------   2 yhs      eng          512 Mar 18 15:20 BACKUP
+-rwx------   1 yhs      eng          709 Mar 18 16:01 alarmdaemon
+-rwx------   1 yhs      eng          612 Mar 18 14:39 alarmdaemon.bak
+-rw-------   1 yhs      eng            0 Mar 18 16:07 out^G
+scriptss$ ps
+  PID TTY      S           TIME COMMAND
+17958 ttyre    S  +     0:00.40 sh -is
+24699 ttyre    I  +     0:00.01 sleep 30
+27274 ttyre    I  +     0:00.77 sh -is
+ 1355 ttye2    S  +     0:00.08 script out 
+ 7731 ttye2    I  +     0:00.02 -sh (sh)
+10271 ttye2    S  +     0:00.06 script out 
+28131 ttye2    I  +     0:05.02 -sh (sh)
+scriptss$ 
+
+ ^G^G ALARM - **** TIME LIMIT EXPIRED **** !!!! ^G^G
+
+scriptss$ 
+scriptss$ ps
+  PID TTY      S           TIME COMMAND
+17958 ttyre    S  +     0:00.41 sh -is
+ 1355 ttye2    S  +     0:00.09 script out 
+ 7731 ttye2    I  +     0:00.02 -sh (sh)
+10271 ttye2    S  +     0:00.06 script out 
+28131 ttye2    I  +     0:05.02 -sh (sh)
+scriptss$ date
+Mon Mar 18 16:16:41 GMT 1996
+scriptss$ Alarm 4 22 am
+Error: Time set is less than present time...aborted.
+scriptss$ date
+Mon Mar 18 16:17:08 GMT 1996
+scriptss$ Alarm 4 22 pm
+scriptss$ 
+
+AlarmDaemon ... Launched ... pid 18441
+
+scriptss$ date
+
+WARNING : Alarm is set to ring in [5] minutes.
+
+
+
+Mon Mar 18 16:17:30 GMT 1996
+scriptss$ ^D
+script done on Mon Mar 18 16:18:01 1996
+
+script done on Mon Mar 18 16:18:01 1996

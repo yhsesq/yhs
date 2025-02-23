@@ -1,0 +1,51 @@
+Script started on Tue Mar 19 10:40:52 1996
+
+Invalid time response :-
+
+scriptss$ Alarm 50 20
+
+
+usage:    Alarm [hh] [mm]         -> 24 hour time
+                  or              
+  Alarm [hh] [mm] [pm/am] -> 12 hour time
+
+
+scriptss$ Alarm 1 2
+Error: Time set is less than present time...aborted.
+scriptss$ date
+Tue Mar 19 10:41:17 GMT 1996
+scriptss$ Alarm 10 40
+Error: Time set is less than present time...aborted.
+scriptss$ date
+Tue Mar 19 10:41:24 GMT 1996
+scriptss$ Alarm 10 40 am
+Error: Time set is less than present time...aborted.
+scriptss$ Alarm 10 40 pm
+scriptss$ 
+
+AlarmDaemon ... Launched ... pid 32018
+
+scriptss$ 
+scriptss$ ps
+  PID TTY      S           TIME COMMAND
+17251 ttybd    S  +     0:00.11 sh -is
+32018 ttybd    S  +     0:00.08 sh -is
+
+The alarm script sleeps for 45 secs in order 
+to prevent processor time being wasted. However, 
+when it reaches 15 minutes to the alarm going off, 
+it begins to sleep for 10 secs to ensure accurate results.
+
+32153 ttybd    S  +     0:00.01 sleep 45
+
+ 1653 ttyca    I  +     0:00.01 -sh (sh)
+18044 ttyca    S  +     0:00.05 script out 
+29332 ttyca    I  +     0:01.57 -sh (sh)
+30623 ttyca    S  +     0:00.08 script out 
+scriptss$ ^D
+script done on Tue Mar 19 10:41:48 1996
+
+script done on Tue Mar 19 10:41:48 1996
+
+All other parameters and error checks are decribed in 
+the Alarm.demo file.

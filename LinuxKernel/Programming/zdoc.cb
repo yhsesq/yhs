@@ -1,0 +1,170 @@
+/* ZDOC Ver. 0.0.0 
+ * This program is distributed under the terms of the GPL v2.0 or later
+ * Download the GNU Public License (GPL) from www.gnu.org
+ *      
+ *  Support the Free Software Foundation !! Support EFF !!
+ *
+ * by Zurk Technology Inc.
+ * zurk@geocities.com
+ * June/July 1998
+ * 
+ */
+
+#pragma pack(2)
+#include <Common.h>
+#include <System/SysAll.h>
+#include <UI/UIAll.h>
+
+#include "zdoc.h"
+#define ZdocAppID    'ZURK'   
+
+static int StartApplication(void);
+static Boolean OpenDatabase(void);
+static void EventLoop(void);
+static void StopApplication(void);
+static Boolean hello(EventPtr event);
+	ListPtr list;
+	CharPtr listItem;
+        LocalID store[20];
+
+DWord  PilotMain (Word cmd, Ptr cmdPBP, Word launchFlags)
+	{
+	int error;
+
+	if ( cmd == sysAppLaunchCmdNormalLaunch )
+		{
+
+		error = StartApplication();  // Application start code
+		if ( error ) return error;
+
+		EventLoop();  // Event loop
+
+		StopApplication (); // Application stop code
+		}
+	return 0;
+	}
+
+
+static int StartApplication(void)
+	{
+
+	FrmGotoForm(formID_zdoc);
+
+	}
+
+static void StopApplication(void)
+	{
+        FrmCloseAllForms();
+
+	while ( 0 );
+
+	}
+
+static void EventLoop(void)
+	{
+        CharPtr array[50];
+        char    text2[4];
+        ULong   typeP[4];
+        char    name[20][30];
+        char    namei[50];
+        int     y=0;
+        DmOpenRef dbR;
+        int i;
+        int j=0;
+        int x=0;
+        ControlPtr popup;
+	short err;
+	int formID;
+	FormPtr form;
+	EventType event;
+
+	do
+		{
+
+		EvtGetEvent(&event, 200);
+
+		if ( SysHandleEvent(&event) )   continue;
+		if ( MenuHandleEvent((void *)0, &event, &err) ) continue;
+
+		if ( event.eType == frmLoadEvent )
+			{
+			formID = event.data.frmLoad.formID;
+			form = FrmInitForm(formID);
+			FrmSetActiveForm(form);
+			switch ( formID )
+				{
+
+case formID_zdoc:
+
+FrmSetEventHandler(form, (FormEventHandlerPtr) hello);
+list=(ListPtr)FrmGetObjectPtr(form,FrmGetObjectIndex(form,listID_dblist));
+x=DmNumDatabases(0);
+for (i=0;i<x;i++){
+DmDatabaseInfo(0,DmGetDatabase(0,i),&namei[0],NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,&typeP[0],NULL);
+StrCopy((CharPtr) &text2[0], (CharPtr) &typeP[0]);
+text2[4]='\0';
+WinDrawChars((CharPtr) &text2[0],4,80,80);
+if (text2[0]==84 && text2[1]==69 && text2[2]==88 && text2[3]==116)
+{if (y<20)
+{j=0; while ((namei[j] != '\0') && (j<30))
+{name[y][j]=namei[j]; j++;}
+name[y][j]='\0'; store[y]=DmGetDatabase(0,i); array[y]=(CharPtr) &name[y][0]; y++;}}}
+LstSetListChoices(list,&array[0],(y)); listItem=LstGetSelectionText(list,0);
+if (!listItem) listItem="                       ";
+popup=(ControlPtr)FrmGetObjectPtr(form,FrmGetObjectIndex(form,listID_popuplist));
+CategorySetTriggerLabel(popup,listItem); break;
+
+                                }
+			}
+		FrmDispatchEvent(&event);
+                } while ( event.eType != appStopEvent );
+	}
+
+static Boolean hello(EventPtr event)
+	{
+        int       listitem;
+        int       a=0;
+        FormPtr   form;
+        DmOpenRef dbR;
+	int       handled = 0;
+	switch ( event->eType )
+		{
+		case frmOpenEvent:
+			form = FrmGetActiveForm();
+			FrmDrawForm(form);
+			handled = 1;
+			break;
+
+		case ctlSelectEvent:     // A control button was pressed and released.
+			if ( event->data.ctlEnter.controlID== buttonID_zdoc )
+				{
+	    FrmAlert (alertID_about);
+				handled = 1;
+				}
+			if ( event->data.ctlEnter.controlID== buttonID_open )
+				{
+listitem=(int) LstGetSelection(list);
+dbR=DmOpenDatabase(0,store[listitem],dmModeReadOnly);
+WinDrawChars((CharPtr) "O",1,80,80);
+DmCloseDatabase(dbR);
+WinDrawChars((CharPtr) "C",1,80,80);
+handled = 1;
+				}
+			break;
+
+		case menuEvent:
+			switch (event->data.menu.itemID)
+				{
+				case menuitemID_about:
+					FrmAlert (alertID_about);
+					break;
+	    }
+	 handled = 1;
+			break;
+
+		case nilEvent:
+			handled = 1;
+			break;
+		}
+	return handled;
+	}

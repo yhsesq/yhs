@@ -1,0 +1,23 @@
+DEFINITION MODULE Die;
+
+TYPE
+	DieType = (zero,one,two,three,four,five,six);
+(* DieType = zero is an error trap in case the random 
+** routine generates an invalid value *)
+
+PROCEDURE InitialiseDie(VAR Die : DieType);
+(*Input : Uninitialised die variable)
+**Output: Initialise Die Variable
+**Modifies: die variable setting it to value six*)
+
+PROCEDURE ThrowDie(VAR Die : DieType);
+(*Input: Die variable
+**Output: Die variable
+**Modifies: Die variable setting it to a random value between one and six*)
+
+PROCEDURE ShowDie(VAR Die : DieType);
+(*Input: value of type DieType
+**Output: None
+**Modifies: Displays the value of Die*)
+
+END Die.

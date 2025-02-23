@@ -1,0 +1,44 @@
+echo Automated test script init :
+date
+echo Adding /playarea to conf file.
+echo /playarea >/opt/sentinel/sentinel.conf
+sleep 2
+echo Copying test script to /playarea
+echo timechange >/playarea/timechange
+echo modechange >/playarea/modechange
+echo everythingchanged >/playarea/everythingchanged
+echo somethingdeleted >/playarea/deletedfile
+sleep 2
+/opt/sentinel/sentinel -init
+echo Changing files...
+echo timechange >/playarea/timechange
+chmod 777 /playarea/modechange
+echo everythingchange >/playarea/everythingchanged
+rm -f /playarea/deletedfile
+sleep 2
+/opt/sentinel/sentinel -check
+echo Adding a new file..
+echo newfile >/playarea/newfile
+sleep 2
+/opt/sentinel/sentinel -addfile /playarea/newfile
+sleep 2
+echo newfilechanged >/playarea/newfile
+sleep 2
+/opt/sentinel/sentinel -cloakcheck
+sleep 2
+/opt/sentinel/sentinel -deletefile /playarea/newfile
+sleep 2
+/opt/sentinel/sentinel -deletecheck
+sleep 2
+/opt/sentinel/sentinel -batchcheck
+sleep 2
+/opt/sentinel/sentinel -undelete /playarea/newfile
+sleep 2
+/opt/sentinel/sentinel -check
+echo Rebuilding to clean mode..
+sleep 2
+/opt/sentinel/sentinel -rebuild
+sleep 2
+/opt/sentinel/sentinel -check
+echo Test script end run :
+date

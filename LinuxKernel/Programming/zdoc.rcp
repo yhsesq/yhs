@@ -1,0 +1,156 @@
+// Z-Doc RCP file.
+#include "zdoc.h"
+
+FORM ID formID_zdoc AT (0 0 160 160 )
+NOFRAME
+USABLE
+MENUID menuID_zdoc
+BEGIN
+        TITLE "ZDOC"
+        BUTTON "About" ID buttonID_zdoc AT ( pos_about 145 35 AUTO ) USABLE FRAME FONT 0
+        BUTTON "Open"  ID buttonID_open AT ( 1   145 AUTO AUTO ) USABLE FRAME FONT 0
+	graffitistateindicator at (38 145)
+        BUTTON ""     ID buttonID_up   AT ( 48 145 10 AUTO ) USABLE NOFRAME FONT 3
+        BUTTON ""     ID buttonID_down AT ( 58  145 10 AUTO ) USABLE NOFRAME FONT 3
+        BUTTON ""     ID buttonID_find   AT ( 68 145 10 AUTO ) USABLE NOFRAME FONT 3
+        BUTTON ""     ID buttonID_again AT ( 78  145 10 AUTO ) USABLE NOFRAME FONT 3
+        BUTTON "Save"  ID buttonID_save AT ( 90  145 AUTO AUTO ) NONUSABLE FRAME FONT 0
+        FIELD ID fieldID_zdoc AT ( 2 20 158 121 ) USABLE EDITABLE MULTIPLELINES DYNAMICSIZE MAXCHARS 4096 AUTOSHIFT UNDERLINED FONT 0
+        POPUPTRIGGER "                           " ID listID_popuplist AT (40 1 AUTO AUTO) LEFTANCHOR
+        LIST "                           " ID listID_dblist AT (40 1 AUTO AUTO) VISIBLEITEMS 10 NONUSABLE
+        POPUPLIST ID listID_popuplist listID_dblist
+        GRAFFITISTATEINDICATOR AT ( 158 158 )
+END
+
+
+MENU ID menuID_zdoc
+BEGIN
+        PULLDOWN "File"
+	BEGIN
+                MENUITEM "New DOC"   menuitemID_new
+                MENUITEM "New Rec"   menuitemID_rec
+                MENUITEM "Password"  menuitemID_pass
+                MENUITEM "Delete DOC" menuitemID_delete
+                MENUITEM "Delete Rec" menuitemID_delrec
+                MENUITEM "Close" menuitemID_close
+	END
+
+        PULLDOWN "Edit"
+        BEGIN
+                MENUITEM "Undo"    menuitemID_undo   "U"
+                MENUITEM "Cut"     menuitemID_cut   "X"
+                MENUITEM "Copy"    menuitemID_copy   "C"
+                MENUITEM "Paste"   menuitemID_paste  "P"
+                MENUITEM "Select All"   menuitemID_select  "S"
+		MENUITEM SEPARATOR
+		MENUITEM "Find"       menuitemID_Find    "F"
+		MENUITEM "Find again" menuitemID_Again    "A"
+        END
+
+        PULLDOWN "Options"
+        BEGIN
+		MENUITEM "Go to Top"     menuitemID_Top    "T"
+		MENUITEM "Go to Bottom"  menuitemID_Bottom "B"
+		MENUITEM "PrevRec"  menuitemID_prev
+		MENUITEM "NextRec"  menuitemID_next
+		MENUITEM "Reload"  menuitemID_Reload
+		MENUITEM "Save"          menuitemID_Save
+        END
+        PULLDOWN "Help"
+        BEGIN
+                MENUITEM "Info"  menuitemID_info	"I"
+		MENUITEM "About" menuitemID_about
+        END
+END
+
+
+ALERT ID alertID_about
+INFORMATION
+BEGIN
+        TITLE "About ZDOC"
+        MESSAGE "ZDOC Document Reader/Writer.\nby Zurk Technology Inc. Ver.5.1.0b 1998-99-2000\nhttp://zurk.netpedia.net\nThis program is distributed under the terms of the GPL v.2.0 or later.\n Download the GPL from\n        www.gnu.org \n"
+	BUTTONS "Done"
+END
+
+
+MENU ID menuID_edit
+BEGIN
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Undo"    menuitemID_undo   "U"
+		MENUITEM "Cut"     menuitemID_cut   "X"
+		MENUITEM "Copy"    menuitemID_copy   "C"
+		MENUITEM "Paste"   menuitemID_paste  "P"
+                MENUITEM "Select All"   menuitemID_select  "S"
+        END
+END
+
+FORM ID alertID_new AT ( 0 0 160 160 )
+FRAME
+USABLE
+MENUID menuID_edit
+BEGIN
+        TITLE "New DOC file"
+        CHECKBOX "Encrypted"  ID checkID_enc  AT ( 20 100 AUTO AUTO ) USABLE
+        CHECKBOX "Compressed" ID checkID_comp AT  ( 20 120 AUTO AUTO ) USABLE
+        LABEL "Enter name of new DOC database :" AUTOID AT ( 10 40 ) FONT 0
+        FIELD ID fieldID_new AT ( 20 60 100 60 ) EDITABLE UNDERLINED LEFTALIGN SINGLELINE AUTOSHIFT MAXCHARS 20 FONT 0
+        BUTTON "Done" ID buttonID_new AT ( 122 145 AUTO AUTO ) USABLE FRAME FONT 0
+END
+
+FORM ID formID_null AT ( 0 0 160 160 )
+FRAME
+USABLE
+MENUID menuID_edit
+BEGIN
+        TITLE "KEY"
+        LABEL "Enter the encrypt/decrypt password :" AUTOID AT ( 5 40 ) FONT 0
+        FIELD ID fieldID_abc AT ( 20 60 100 60 )  EDITABLE UNDERLINED LEFTALIGN SINGLELINE AUTOSHIFT MAXCHARS 8 FONT 0
+        BUTTON "Done" ID buttonID_abc AT ( 122 145 AUTO AUTO ) USABLE FRAME FONT 0
+END
+
+FORM ID formID_find AT (20 40 110 50)
+MODAL
+MENUID menuID_edit
+BEGIN
+    TITLE "Find"
+    field id fieldID_find at ( 10 15 90 12) leftalign editable underlined singleline maxchars 32
+    button "Cancel" id buttonID_cancel  AT ( 5 30 AUTO AUTO ) FONT 0
+    button "Ok" id buttonID_ok AT ( PREVRIGHT+5 30 AUTO AUTO ) FONT 0
+    POPUPTRIGGER "Str" ID listID_popuplist AT (PREVRIGHT+5 30 auto AUTO) LEFTANCHOR
+    LIST "Str" "Rec" ID listID_find AT (PREVLEFT+5 30 AUTO AUTO) NONUSABLE VISIBLEITEMS 2
+    POPUPLIST ID listID_popuplist listID_find
+END
+
+
+FORM ID formID_info AT (0 0 160 160)
+FRAME
+USABLE
+MENUID menuID_edit
+BEGIN
+    TITLE "Info"
+    field id fieldID_Info1 at ( 5 15 145 12) leftalign editable singleline maxchars 40
+    field id fieldID_Info2 at ( 10 PREVBOTTOM+2 140 12) leftalign editable singleline maxchars 40
+        LABEL "Scroll" AUTOID AT (5 PREVBOTTOM+3  ) FONT 1
+        LABEL "H" AUTOID AT (PREVRIGHT+5 PREVTOP  ) FONT 0
+	field id fieldID_scrollH at (PREVRIGHT+5 PREVTOP  20 12) leftalign editable underlined singleline maxchars 32
+        LABEL "S" AUTOID AT (PREVRIGHT+10 PREVTOP  ) FONT 0
+	field id fieldID_scrollS at (PREVRIGHT+5 PREVTOP  20 12) leftalign editable underlined singleline maxchars 32
+        LABEL "F" AUTOID AT (PREVRIGHT+10 PREVTOP  ) FONT 0
+	field id fieldID_scrollF at (PREVRIGHT+5 PREVTOP  20 12) leftalign editable underlined singleline maxchars 32
+	CHECKBOX "AutoSave" ID checkID_save AT  ( 10 PREVBOTTOM+3 AUTO AUTO ) USABLE
+        LABEL "Font" AUTOID AT (PREVRIGHT+10 PREVTOP  ) FONT 0
+	field id fieldID_font at (PREVRIGHT+5 PREVTOP  20 12) leftalign editable underlined singleline maxchars 32
+    field id fieldID_new at ( 5 PREVBOTTOM+21 120 12) leftalign editable underlined singleline maxchars 32
+	field id fieldID_Info3 at ( 10 PREVBOTTOM+4 155 12) leftalign editable singleline maxchars 40
+	CHECKBOX "Backup" ID checkID_back AT  ( 10 PREVBOTTOM+4 AUTO AUTO ) USABLE
+	CHECKBOX "Read" ID checkID_read AT  ( PREVRIGHT+10 PREVTOP AUTO AUTO ) usable
+	CHECKBOX "Open" ID checkID_open AT  ( PREVRIGHT+10 PREVTOP AUTO AUTO ) disabled
+	button "Ok" id buttonID_ok AT ( 10 PREVBOTTOM+4 AUTO AUTO ) FONT 0
+	button "Cancel" id buttonID_cancel  AT ( PREVRIGHT+5 PREVTOP AUTO AUTO ) FONT 0
+	button "Delete" id buttonID_del  AT ( PREVRIGHT+5 PREVTOP AUTO AUTO ) FONT 0
+
+END
+
+ICON "ZDOC.BMP"
+VERSION ID 1 "5.1.0b"

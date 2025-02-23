@@ -1,0 +1,122 @@
+Script started on Tue Nov 14 10:46:01 1995
+scriptss$ Time
+
+
+Program to add two times together...
+
+Enter the hours of the first time :0
+
+Enter the minutes of the first time :0
+
+Enter the seconds of the first time :0
+
+Enter the hours of the second time :0
+
+Enter the minutes of the second time :0
+
+Enter the seconds of the second time :0
+
+
+
+ The First Time is -  0 :  0 :  0
+ The Second Time is -  0 :  0 :  0
+
+
+The added time is =   0 :  0 :  0
+
+This demonstrates the fact that the program can add together 
+2 null times.
+
+scriptss$ Time
+
+
+Program to add two times together...
+
+Enter the hours of the first time :1
+
+Enter the minutes of the first time :38
+
+Enter the seconds of the first time :42
+
+Enter the hours of the second time :3
+
+Enter the minutes of the second time :43
+
+Enter the seconds of the second time :33
+
+
+
+ The First Time is -  1 : 38 : 42
+ The Second Time is -  3 : 43 : 33
+
+
+The added time is =   5 : 22 : 15
+
+This shows that the program works even with two carries
+in the minutes and the seconds.
+
+scriptss$ Time
+
+
+Program to add two times together...
+
+Enter the hours of the first time :13
+
+Enter the minutes of the first time :12
+
+Enter the seconds of the first time :12
+
+Enter the hours of the second time :17
+
+Enter the minutes of the second time :48
+
+Enter the seconds of the second time :53
+
+
+
+ The First Time is - 13 : 12 : 12
+ The Second Time is - 17 : 48 : 53
+
+
+The added time is =  31 :  1 :  5
+
+This validates the hours function. Since the program specification 
+does not allow for days, the hours are simply added.
+
+scriptss$ Time
+
+
+Program to add two times together...
+
+Enter the hours of the first time :10
+
+Enter the minutes of the first time :45
+
+Enter the seconds of the first time :22
+
+Enter the hours of the second time :1
+
+Enter the minutes of the second time :5
+
+Enter the seconds of the second time :3
+
+
+
+ The First Time is - 10 : 45 : 22
+ The Second Time is -  1 :  5 :  3
+
+
+The added time is =  11 : 50 : 25
+
+This adds two times without carries.
+
+scriptss$ ^D
+script done on Tue Nov 14 10:47:36 1995
+
+Limitations:
+1. No Error checking on the hrs/mins/secs.
+2. Negative times will generate errors since the variables are CARDINAL.
+3. No days since it was not in the program specifications.
+4. No AM/PM. Only military format times allowed. AM/PM was also 
+not part of the specification of the program.
+

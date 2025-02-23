@@ -1,0 +1,19 @@
+DEFINITION MODULE Player;
+
+
+TYPE
+	PlayerType=(Player1,Player2);
+
+	PlayerRecord = RECORD
+		id : PlayerType;
+		wealth : INTEGER;
+		END; (*PlayerRec*)
+
+	PlayerRec = ARRAY [Player1..Player2] OF PlayerRecord;
+
+PROCEDURE PrintPlayer(VAR Players : PlayerRec);
+(* Input : Takes player records
+** Output : Outputs them.
+*)
+
+END Player.

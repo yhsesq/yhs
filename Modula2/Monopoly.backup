@@ -1,0 +1,265 @@
+MODULE Monopoly;
+
+(* Monopoly Game  ------- Tutorial Excercise XIb*)
+(* Reads the data file Mono2.dat/Monopoly system*)
+(* Compiler : Gardens Point / Modula 2 - gpm    *)
+ 
+
+FROM InOut IMPORT WriteString, WriteLn, ReadCard, WriteCard, ReadInt, WriteInt, ReadString, Read, OpenInput, CloseInput, Done;
+
+TYPE
+(* 
+SquareClass(Go,Property,ChanceorChest,IncomeTax,Station,Jail,Utility,FreePark,GoToJail);
+*)
+StringArray = ARRAY [0..30] OF CHAR;
+MonopolySquare=RECORD
+	number : CARDINAL; type : INTEGER;
+	CASE class: CHAR OF
+		'P' : 	pname : ARRAY [0..30] OF CHAR;
+		      	pcolour : ARRAY [0..30] OF CHAR;
+			price,prent,rentwi,rentwii,rentwiii,rentwiv,rentwh,hcost,hotwiv,houses,hotels : ARRAY [0..15] OF CHAR;
+			pownername : ARRAY [0..30] OF CHAR
+	|	'S' : 	sname : ARRAY [0..30] OF CHAR;
+			sprice,srent : ARRAY [0..15] OF CHAR;
+			sownername : ARRAY [0..30] OF CHAR
+	|	'U' : 	uname : ARRAY [0..30] OF CHAR;
+			uprice : ARRAY [0..15] OF CHAR;
+			uownername : ARRAY [0..30] OF CHAR
+	ELSE
+	END; (* CASE *)
+	END (* MonopolySquare *);
+
+SquareArrayType = ARRAY [1..50] OF MonopolySquare;
+
+VAR
+
+sqr : INTEGER;
+class : CHAR;
+Square : SquareArrayType;
+
+PROCEDURE ReadSquare(VAR sqr : INTEGER);
+
+BEGIN
+
+	WriteLn;
+	WriteLn;
+	WriteString("MonoPoly/11b");
+	WriteLn;
+	WriteLn;
+	WriteString("Enter the number of the square :-:");
+	ReadInt(sqr);
+	IF (sqr > 40 OR sqr < 1) THEN 
+					sqr:=1;
+					WriteLn;
+					WriteString("Invalid Square. Taken as 1.");
+					WriteLn;
+					END;
+	WriteLn;
+	WriteLn;
+
+END ReadSquare;
+
+PROCEDURE FindSquare(sqr : INTEGER);
+
+VAR
+
+data : ARRAY [0..100] OF CHAR;
+counter : INTEGER;
+
+BEGIN
+	counter:=0;
+	OpenInput("dat");
+	FOR counter:=1 TO 40 DO
+	
+	ReadString(data);
+	IF (data[0]='G') 
+	THEN 	class:=data[0];
+		Square[counter].number:=counter;
+		Square[counter].type:=1;
+
+	ELSIF (data[0]='P')
+	THEN 	class:=data[0];
+		Square[counter].number:=counter;
+		ReadString(Square[counter].pname);
+		ReadString(Square[counter].price);
+		ReadString(Square[counter].prent);
+		ReadString(Square[counter].rentwi);
+		ReadString(Square[counter].rentwii);
+		ReadString(Square[counter].rentwiii);
+		ReadString(Square[counter].rentwiv);
+		ReadString(Square[counter].rentwh);
+		ReadString(Square[counter].hcost);
+		ReadString(Square[counter].hotwiv);
+		ReadString(Square[counter].houses);
+		ReadString(Square[counter].hotels);
+		ReadString(Square[counter].pownername);
+                Square[counter].type:=2;
+
+
+	ELSIF (data[0]='C')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+                Square[counter].type:=3;
+
+	ELSIF (data[0]='I')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+                Square[counter].type:=4;
+
+	ELSIF (data[0]='S')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+		ReadString(Square[counter].sname);
+		ReadString(Square[counter].sprice);
+		ReadString(Square[counter].srent);
+		ReadString(Square[counter].sownername);
+                Square[counter].type:=5;
+
+	ELSIF (data[0]='J')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+                Square[counter].type:=6;
+
+	ELSIF (data[0]='U')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+		ReadString(Square[counter].uname);
+		ReadString(Square[counter].uprice);
+		ReadString(Square[counter].uownername);
+                Square[counter].type:=7;
+
+	ELSIF (data[0]='F')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+                Square[counter].type:=8;
+
+	ELSIF (data[0]='T')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+                Square[counter].type:=9;
+
+	ELSE 
+	END;
+	END; (* FOR *)
+	CloseInput;
+
+END FindSquare;
+
+PROCEDURE WriteSquare(sqr : INTEGER);
+VAR
+
+c : INTEGER;
+
+BEGIN
+	c:=0;
+	WriteLn;
+        IF (Square[sqr].type=1)
+        THEN
+		WriteLn;
+                WriteString(" The Square is a GO Square ");
+		WriteLn;
+
+        ELSIF (Square[sqr].type=2)
+        THEN
+		WriteString("The Square is a PROPERTY Square :-");
+                WriteLn;
+                WriteString("Property Name :");WriteString(Square[sqr].pname);
+                WriteLn;
+                WriteString("Property Price :");WriteString(Square[sqr].price);
+                WriteLn;
+                WriteString("Property Rent :");WriteString(Square[sqr].prent);
+                WriteLn;
+                WriteString("Rent w 1 house :");WriteString(Square[sqr].rentwi);
+                WriteLn;
+                WriteString("Rent w 2 houses :");WriteString(Square[sqr].rentwii);
+                WriteLn;
+                WriteString("Rent w 3 houses :");WriteString(Square[sqr].rentwiii);
+                WriteLn;
+                WriteString("Rent w 4 houses :");WriteString(Square[sqr].rentwiv);
+                WriteLn;
+                WriteString("Rent w 1 hotel :");WriteString(Square[sqr].rentwh);
+                WriteLn;
+                WriteString("House Cost :");WriteString(Square[sqr].hcost);
+                WriteLn;
+                WriteString("Hotel/4 Houses :");WriteString(Square[sqr].hotwiv);
+                WriteLn;
+		WriteString("No. of houses :");WriteString(Square[sqr].houses);
+                WriteLn;
+                WriteString("No. of hotels :");WriteString(Square[sqr].hotels);
+                WriteLn;
+		WriteString("Owner's Name :");WriteString(Square[sqr].pownername);
+                WriteLn;
+ 
+	ELSIF (Square[sqr].type=3)
+        THEN
+		WriteLn;
+        	WriteString(" The Square is a Chance/Chest Card Square ");
+		WriteLn;
+
+        ELSIF (Square[sqr].type=4)
+        THEN
+                WriteLn;
+                WriteString(" The Square is a Income Tax Square ");
+                WriteLn;        
+
+	ELSIF (Square[sqr].type=6)
+        THEN
+                WriteLn;
+                WriteString(" The Square is a Jail Square ");
+                WriteLn;        
+
+	ELSIF (Square[sqr].type=8)
+        THEN
+                WriteLn;
+                WriteString(" The Square is a FREE PARKING Square ");
+                WriteLn;
+
+        ELSIF (Square[sqr].type=9)
+        THEN
+                WriteLn;
+                WriteString(" The Square is a GO TO JAIL Square ");
+                WriteLn;
+
+        ELSIF (Square[sqr].type=5)
+        THEN
+		WriteLn;
+		WriteString(" The Square is a Station Square :-");
+                WriteLn;
+                WriteString(" Station Name :");WriteString(Square[sqr].sname);
+                WriteLn;
+                WriteString(" Station Cost :");WriteString(Square[sqr].sprice);
+                WriteLn;
+                WriteString(" Station Rent :");WriteString(Square[sqr].srent);
+                WriteLn;
+                WriteString(" Station owner's name :");WriteString(Square[sqr].sownername);
+                WriteLn;
+
+        ELSIF (Square[sqr].type=7)
+        THEN
+		WriteLn;
+		WriteString(" The Square is a Utility Square :- ");
+                WriteLn;
+                WriteString(" Utility Name :");WriteString(Square[sqr].uname);
+                WriteLn;
+                WriteString(" Utility Price :");WriteString(Square[sqr].uprice);
+                WriteLn;
+                WriteString(" Utility Owner's Name :");WriteString(Square[sqr].uownername);
+                WriteLn;
+	ELSE 	
+		WriteLn;
+		WriteString("Unknown Type");
+		WriteLn;
+END;
+
+END WriteSquare;
+
+(* Main Program Begin... *)
+BEGIN
+	
+	ReadSquare(sqr);
+	FindSquare(sqr);
+	WriteSquare(sqr);
+
+END Monopoly.
+
+ 

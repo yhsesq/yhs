@@ -1,0 +1,350 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; IRIX 6.3 IP32) [Netscape]">
+   <TITLE>ZDOC Programmers Page</TITLE>
+<!--?G!JavaScriptEditor-->
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#000000" VLINK="#000000" ALINK="#000000">
+
+<CENTER>
+<H1>
+<IMG SRC="http://www.geocities.com/Area51/7689/zdoc.jpg" NOSAVE HEIGHT=500 WIDTH=660></H1></CENTER>
+
+<CENTER>
+<H1>
+<!--?G!!TEXTB--><B><FONT COLOR="#D2691E"><FONT SIZE=+4>ZDOC/PalmPilot</FONT></FONT></B><!--?G!!TEXTE--></H1></CENTER>
+<!--?G!!!NEWL-->
+<BR><!--?G!!!SEPA-->
+<CENTER><IMG SRC="http://www.geocities.com/homestead/JSeditor/separators/rule11.gif" NOSAVE HEIGHT=4 WIDTH=468></CENTER>
+<!--?G!!!TEXT--><!--?G!!TEXTB-->
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#FF0000">&nbsp;
+PENDING FURTHER NOTIFICATION ZDOC IS NOW TO BE DOWNLOADED</FONT>
+<BR><FONT COLOR="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FROM GEOCITIES. PLEASE UPDATE YOUR LINKS. THIS IS DUE TO</FONT>
+<BR><FONT COLOR="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+SITE PROBLEMS AT TRIPOD.</FONT>
+<PRE>ZDOC is my initiative to create a GNU based (essentially freeware)
+Aportis DOC handler program for the PalmPilot.&nbsp;
+THE SOFTWARE ON THIS SITE IS DISTRIBUTED UNDER THE TERMS OF THE GPL.
+GO TO WWW.LINUX.ORG.UK/GPL.html TO READ THE LICENSE.
+
+The following are the proposed version numbers for ZDOC :-
+&nbsp;0.0.x - Basic development versions. No functionality other than&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Database detection and classification.
+&nbsp;1.0.x - Basic reader capable of handling uncompressed DOC files.
+&nbsp;2.0.x - As 1.0.x but capable of reading compressed DOC files.
+&nbsp;3.0.x - As 2.0.x but capable of writing to uncompressed DOC files.
+&nbsp;4.0.x - As 3.0.x but capable of writing to compressed DOC files.
+&nbsp;5.0.x - As 4.0.x but capable of encrypting text written/read to/from
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOC files.
+&nbsp;6.0.x - As 5.0.x but capable of Serial port receive/transmit of DOC&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; files.
+
+If you are going to create your own versions I suggest you keep your
+version numbers the same as mine. If you have additional functionality&nbsp;
+please add version numbers while keeping the basic numbers constant.
+For example if i include XYZ functionality to Version 2.0.0 my version
+number should be 2.1.0. I will be incrementing 2.0.0 to 2.0.1 when a
+major bug is fixed and for nothing else. Bug fixes are appreciated!
+
+If you fix it i'll increment the version number and acknowledge you.
+
+This website is updated weekly. Check back for more info.
+
+Notes :-
+
+14/6/98 - Beginning work on ZDOC -- Finally! Reading all the masses of dox.
+
+15/6/98 - Finally got the basic Hello World to compile and run properly.&nbsp;
+
+16/6/98 - Managed to get Version 0.0.0a running.
+
+17/6/98 - Ver 0.0.0 stable. released on website.
+
+18/6/98 - Ver 1.0.2a running. Not released due to bugs in the scrolling function.
+
+19/6/98 - Work beginning on Ver 2.x due to the fact the compression/decompression
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; was easier than i thought. Ver 2.0.0a running. Not released due to&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; improvements reqd in memory handling.
+
+20/6/98 - Argh. no access to public terminal.&nbsp;
+
+21/6/98 - Did some work in memory improvement. No access to public terminal. *sigh*
+
+22/6/98 - Couldnt compile Ver 2.0.0b. Public access to terminal denied. dammit.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hopefully should get something up by tomorrow. *double_sigh*
+
+23/6/98 - Compiled in support for compression. Problems with fields to arrays
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conversions. Released 2.0.0a and found a major bug with memory handling.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.0.1a now released with bits of the bug removed.&nbsp;
+
+26/6/98 - Solved the horrible memory bug with help from 3COMs tech support !!
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Looks like their developer support is equally good compared to their&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; customer support -- thanks guys!! ZDOC updated...</PRE>
+
+<PRE>Below is the messages i recvd which solved the problem :-
+
+> >the emulator...said that my application had written to low memory...
+> >I found it to be the DmWrite() call...
+> >Are we allowed to continue using DmWrite() to databases ?
+>
+> Absolutely; DmWrite is the only way to write to a block in the storage
+> heap.&nbsp; There must be something else going wrong in your app.
+>
+> Have you verified that the handle returned to you is non-zero?&nbsp; And are
+> you really passing a zero as the second parameter to DmNewRecord? (It
+> isn't allowed to be null; it needs to point to a local variable.)
+>
+> I bet that your handle is invalid.&nbsp; Check it out in the debugger.
+>
+> -David Fedor
+> Palm Developer Support
+
+Anyway, theres still a small bug left which i'll clean out sooner or later.
+Weekend coming up so i think i'll leave it til monday. You can download
+Ver 2.0.1b in the meantime.</PRE>
+
+<PRE>26/6/98 ok..ok. i had some time so i removed the bug. no more bugs left (i think).</PRE>
+<TT>Mail me if you find any bugs left over. i'm releasing this for beta
+testing.</TT>
+<BR><TT>Check ZDOC_ERR.TXT for any errata (not the crashable bug variety..just
+glitches)</TT>
+<BR><TT>before mailing me. If you find a bug that affects the system in
+any way please</TT>
+<BR><TT>mail me ASAP.</TT>
+
+<P><TT>29/6/98 Worked over the weekend for the ZDOC manual + did the compressed
+and uncompressed</TT>
+<BR><TT>saving. Released ver3.x alpha and ver 4.x alpha. Note the alpha
+releases corrupt files and</TT>
+<BR><TT>will do so for some time until i get the bug out. Beta testing
+program should hopefully</TT>
+<BR><TT>throw some bugs out which can be corrected in all the versions.
+Development work is currently</TT>
+<BR><TT>going on full steam ahead and will continue to do so until a critical
+level is reached.</TT>
+<BR><TT>Then i'll begin on the debugging/glitch tidying portions. Do not
+use alpha releases on anything</TT>
+<BR><TT>other than debug roms + emulator.</TT>
+
+<P><TT>30/6/98 bugs..bugs and more bugs. mainly related to memory handlers.
+good news is compression</TT>
+<BR><TT>routines have been validated and work nicely. bad news is that
+at least 3 MAJOR bugs have been</TT>
+<BR><TT>found all leading to severe and permanent database corruption.
+all are in the saving routines</TT>
+<BR><TT>and no others (whew! relief) but all cause corruption in currently
+opened databases. development</TT>
+<BR><TT>work is now halted while i try to combat the spread of the bugs
+and limit memory loss. ZDOC_Tech.txt</TT>
+<BR><TT>is now included with the alpha files which details the bugs discovered
+and removed in (mainly)</TT>
+<BR><TT>non technical terms.</TT>
+
+<P><TT>1/7/98 ok..i seem to have removed (most) of the bugs...the alpha
+release is proving to be more</TT>
+<BR><TT>stable than the beta right now (gulp!)..anyway, at the request
+of plenty of testers ive removed</TT>
+<BR><TT>the pause while it displays file information...i was using it for
+debugging, but i guess no one</TT>
+<BR><TT>else wanted to so i've removed it in both the beta and alpha releases.
+i spent most of today</TT>
+<BR><TT>trying to whack my personal java security system into shape, so
+not much progress was made on</TT>
+<BR><TT>ZDOC excepting the bug fixes. i also found that Aportisdoc (mobile
+edition) crashed! with an</TT>
+<BR><TT>invalid low memory write when i tested it under the gremlins (3.0
+debug rom)...guess you cant</TT>
+<BR><TT>trust commercial software for lack of bugs either. theres still
+2 bugs that i know of in ZDOC</TT>
+<BR><TT>but both of them are minor and only occur if you fiddle with it
+excessively (or run a gremlin</TT>
+<BR><TT>on it). get rid of em when time permits..tommorrow i go full steam
+ahead on the creating new</TT>
+<BR><TT>files routines and the deleting and renaming ones (time permitting).
+back to development!</TT>
+
+<P><TT>2/7/98 Slight amount of housekeeping on ZDOC to make the code slightly
+(very slightly) tidier.</TT>
+<BR><TT>Alphas now a helluva lot more stable than the beta and i cant seem
+to decide to do anything about</TT>
+<BR><TT>the beta *sigh*. ZDOC 4.0.5a now has an improved menu with the
+ability to create compressed and</TT>
+<BR><TT>uncompressed DOC databases, with a user specified name. I'll spend
+another day fixing 4.x before</TT>
+<BR><TT>moving on to 5.x with encryption/decryption (encrypted DOCs)..encryption
+will prolly be weak</TT>
+<BR><TT>at this stage. I'll try and put in 512-bit PGP-style encryption
+using the SSLeay/Pilot port..if</TT>
+<BR><TT>its GNUable. Also finally start work on the version i really really
+want..ver 6.x with serial i/o.</TT>
+<BR>&nbsp;
+<BR><TT>3/7/98 More debugging and fixing of Ver4.x..also fixed the create
+new DOC file (compressed &amp;</TT>
+<BR><TT>uncompressed), improved field memory handling, activated the Close
+and reload database from the</TT>
+<BR><TT>menu, fixed the famous OS 3.x form bug (Bad Form Handler) documented
+on 3COMs pages, improved the</TT>
+<BR><TT>create New record function. Fixed the CloseAllForms() bug too.
+Still got some problems with gremlins</TT>
+<BR><TT>and underlocked field handlers...which i'll probably keep for a
+while since i'll start work on</TT>
+<BR><TT>encryption &amp; serial i/o next. Maybe switch 5.x and 6.x around
+since serial i/o is more fun(?)</TT>
+<BR><TT>to work on. Any case, i'll leave all this til monday.</TT>
+
+<P><TT>7/7/98 Fixed one more bug. Added Serial Rx/Tx (untested..waiting
+for sufficient hardware</TT>
+<BR><TT>availability). Added weak encryption/decryption. Incremented version
+no. to 5.0.0a.</TT>
+
+<P><TT>8/7/98 Ok..finally tested the serial i/o and fixed a few problems.
+Finally installed it on my pilot.</TT>
+<BR><TT>Serial I/O works ok except for the following :- Serial Output only
+works if you have no flow control,</TT>
+<BR><TT>and your file is terminated with a few carriage returns. Also allow
+CR translation to CR/LF.</TT>
+<BR><TT>Serial Input works with only one 4K chunk at a time. You need to
+have an open doc file when recieving</TT>
+<BR><TT>but not when transmitting. Bit of a pain, but i'll keep the version
+number to 5.x which is not supposed</TT>
+<BR><TT>to have serial i/o until i can get some hardware for testing it
+properly. Encryption seems to work ok,</TT>
+<BR><TT>but its weak (8 bits). i'll play with the encryption and see if
+i can assign passwords or something.</TT>
+
+<P><TT>9/7/98 Minor changes and bugfixes. Also updated the manual page
+and improved the encryption. Its still</TT>
+<BR><TT>weak but can now allow the user to assign a password (max 8 bytes)
+and uses the usual 64-bit rotating</TT>
+<BR><TT>XOR one time pad type algorithm. Note that it can be cracked..but
+now it requires some effort (128^8 possible combinations). Very difficult
+to crack on a palm, should be able to be cracked on a PC. Its still compatible</TT>
+<BR><TT>with files generated with the old one (i.e. if you dont enter a
+password into the password field, it will</TT>
+<BR><TT>decrypt the old algorithm) Note that i could not post up this version
+because of tripods FTP service being</TT>
+<BR><TT>disabled for some hardware problem. i'll push it up in a day or
+two after they fix the FTP service. I'm</TT>
+<BR><TT>switching into bug fixing stage since there doesnt seem to be any
+major development work to do.</TT> <TT>As a temporary</TT>
+<BR><TT>backup (while tripod is down ONLY) download 5.0.0b from <A HREF="http://www.geocities.com/Area51/7689/zdoc.zip">here</A>.</TT>
+
+<P><TT>10/7/98 Pending further notification ZDOC is now to be downloaded
+from geocities. I've lost patience with</TT>
+<BR><TT>tripod. Please update your links :- <B><U>http://www.geocities.com/Area51/7689/zdoc.zip</U></B></TT>
+
+<P><TT>11/7/98 This is it folks. The end of the line for ZDOC development
+(at least by me). Now work on this software will</TT>
+<BR><TT>proceed only to the bug fixing stage. ZDOC is destined to remain
+in beta for a loong time now. It's reasonably</TT>
+<BR><TT>stable enough for me, and it does everything i need...so thats
+where it'll remain. Some development work is being</TT>
+<BR><TT>carried out in france to extend it with searching capabilities
+at this time, but this is where i'm stopping. Ver5.0.0b</TT>
+<BR><TT>is IT. I'll continue posting bug fixes up sloowly..if you find
+a bug, please fix it. I have very limited computer</TT>
+<BR><TT>access here and the official ZDOC development areas are deleted
+off the public machine i was developing on. ZDOC is</TT>
+<BR><TT>now installed on my personal palmpro, where its working happily
+at this stage..few problems encountered with the keyboard..</TT>
+<BR><TT>remember to scroll to the top of the record and click the pen at
+the top line just before saving after using the builtin kbd..</TT>
+<BR><TT>other than that its fine. Anyway, i've got one more project which
+needed development for some time and i'm starting</TT>
+<BR><TT>work on that (ZSecure/Java). Any enhancements/improvements etc.
+that anyone would like to put up...post em to me. I</TT>
+<BR><TT>have enough resources to work with HTML, so i can change/update
+these pages easily.</TT>
+<BR><TT>&lt;-EOF-></TT>
+
+<P>
+<HR WIDTH="100%">
+<BR><TT>Current Version(s) :-</TT>
+<BR><TT>As I post them up you can download them from here (below) directly.</TT>
+
+<P><TT>&nbsp; Filename&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Released&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Download</TT>
+<BR>
+<HR WIDTH="100%">
+<PRE>zbruce.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.0.0b2(source)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="http://www.geocities.com/Area51/7689/zbruce.txt">Contrib Source code</A> from</PRE>
+
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="mailto:bruceg@ballycc.com">Bruce Gebbeken</A></PRE>
+
+<HR WIDTH="100%">
+<BR><TT>ZDOC.ZIP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.0.1b2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+REL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="http://www.geocities.com/Area51/7689/zdoc.zip"><IMG SRC="http://www.geocities.com/Area51/7689/zdoct.gif" NOSAVE HEIGHT=51 WIDTH=167 ALIGN=CENTER></A></TT>
+<BR>
+<HR WIDTH="100%">
+<HR WIDTH="100%">
+<BR><TT>ZDOC5.ZIP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.0.0b2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+REL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="http://www.geocities.com/Area51/7689/zdoc.zip"><IMG SRC="http://www.geocities.com/Area51/7689/zdoct.gif" NOSAVE HEIGHT=51 WIDTH=167 ALIGN=CENTER></A></TT>
+<BR>
+<HR WIDTH="100%">
+<BR><TT>ZDOC4.ZIP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.0.5a2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+REL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="http://www.geocities.com/Area51/7689/zdoc4.zip"><IMG SRC="http://www.geocities.com/Area51/7689/zdoca.gif" NOSAVE HEIGHT=51 WIDTH=167 ALIGN=ABSCENTER></A></TT>
+<BR>
+<HR WIDTH="100%">
+<BR><TT>ZDOC2.ZIP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.0.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TBA</TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+NOT YET
+<BR>
+<HR WIDTH="100%">
+<BR><TT>ZDOCT.ZIP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.0.1c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+REL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="http://www.geocities.com/Area51/7689/zdoc2.zip"><IMG SRC="http://www.geocities.com/Area51/7689/zdoct.gif" NOSAVE HEIGHT=51 WIDTH=167 ALIGN=ABSCENTER></A>
+<BR>
+<HR WIDTH="100%">
+<BR><TT>ZDOC0.ZIP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+REL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="http://www.geocities.com/Area51/7689/zdoc0.zip"><IMG SRC="http://www.geocities.com/Area51/7689/zdoc0.gif" NOSAVE HEIGHT=51 WIDTH=167 ALIGN=ABSCENTER></A>
+<BR>
+<HR WIDTH="100%">
+<BR><TT>Notes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TBA : To be released shortly
+(1-20 days(heh)).</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+REL : Released version.</TT>
+
+<P><TT>If you want to contribute to this GPLised project please let me
+know.</TT>
+<BR><TT>Send mail to me at : zurk@geocities.com telling me which version</TT>
+<BR><TT>(i prefer you do the versions entirely than just a few addons)
+you want</TT>
+<BR><TT>to work on and how long it will take. I work at a rapid pace and
+would</TT>
+<BR><TT>expect you to keep your time frame, so unless you are really sure
+of your</TT>
+<BR><TT>capabilities I suggest you simply try and&nbsp; work on the second
+version after</TT>
+<BR><TT>the currently released version. i.e. if the current release is
+1.x you start work</TT>
+<BR><TT>on 3.x. Once you have completed it you can simply mail me the sources</TT>
+<BR><TT>and assuming that I will have finished ver 2.x by that time, i
+can simply</TT>
+<BR><TT>progress at a faster pace. If I have finished 3.x by that time,
+theres no real</TT>
+<BR><TT>harm done as you will have got some programming practice. If youre</TT>
+<BR><TT>implementation is better than mine, i'll simply switch the two.</TT>
+<BR><TT>Note that [a] is a buggy alpha release, [b] is the stable beta
+and no suffix</TT>
+<BR><TT>attached indicates a full public version.<!--?G!!TEXTE--><!--?G!!!SEPA--></TT>
+<CENTER><IMG SRC="http://www.geocities.com/homestead/JSeditor/separators/rule11.gif" NOSAVE HEIGHT=4 WIDTH=468></CENTER>
+<!--?G!!!LINK-->
+<CENTER>
+<H3>
+<!--?G!!LINKB--><B><A HREF="http://members.tripod.com/~zurkling/zdoc.zip">Download
+: ZDOC.ZIP&nbsp;</A></B><A HREF="http://www.geocities.com/Area51/7689/zdoc.zip"><IMG SRC="http://www.geocities.com/Area51/7689/zdoct.gif" NOSAVE HEIGHT=51 WIDTH=167 ALIGN=ABSCENTER></A></H3></CENTER>
+
+<CENTER>
+<H3>
+<B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A HREF="http://members.tripod.com/~zurkling/zdoc0.zip">Download
+: ZDOC0.ZIP&nbsp;<A HREF="http://www.geocities.com/Area51/7689/zdoc0.zip"><IMG SRC="http://www.geocities.com/Area51/7689/zdoc0.gif" NOSAVE HEIGHT=51 WIDTH=167 ALIGN=CENTER></A></A>&nbsp;</B><!--?G!!LINKE--></H3></CENTER>
+<!--?G!!!SEPA-->
+<CENTER><IMG SRC="http://www.geocities.com/homestead/JSeditor/separators/rule11.gif" NOSAVE HEIGHT=4 WIDTH=468></CENTER>
+<!--?G!!!TEXT--><!--?G!!TEXTB-->
+<CENTER><IMG SRC="http://www.geocities.com/cgi-bin/counter" NOSAVE HEIGHT=20 WIDTH=60></CENTER>
+<!--?G!!TEXTE-->
+<HR>
+<CENTER><B>This page hosted by&nbsp;<A HREF="http://www.geocities.com/"><IMG SRC="http://www.geocities.com/pictures/gc_icon.gif" ALT="GeoCities" NOSAVE BORDER=0 HEIGHT=31 WIDTH=88 ALIGN=CENTER></A>Get
+your own <A HREF="http://www.geocities.com/">Free Home Page</A></B></CENTER>
+
+</HTML>

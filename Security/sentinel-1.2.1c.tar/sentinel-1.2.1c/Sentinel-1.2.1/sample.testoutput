@@ -1,0 +1,50 @@
+0
+INIT:[CRITICAL] System initialised by root. All files rebuilt. :: Tue Aug 24 16:02:55 1999
+Rebuild:[CRITICAL] Database rebuild attempted by root. Conf file rescanned. :: Tue Aug 24 16:02:56 1999
+Check:[NORMAL] Database check initiated by root. :: Tue Aug 24 16:02:56 1999
+Check:[WARN] Time of file /playarea/timechange has been modified. :: Tue Aug 24 16:02:56 1999
+Check:[WARN] Mode of file /playarea/modechange has been modified. :: Tue Aug 24 16:02:56 1999
+Check:[WARN] Data in file /playarea/everythingchanged has been modified by 78%. :: Tue Aug 24 16:02:56 1999
+Check:[WARN] Time of file /playarea/everythingchanged has been modified. :: Tue Aug 24 16:02:56 1999
+Check:[WARN] File /playarea/deletedfile has been deleted. :: Tue Aug 24 16:02:56 1999
+Check:[NORMAL] Database check completed successfully. :: Tue Aug 24 16:02:56 1999
+Add:[CRITICAL] File /playarea/newfile added to database. :: Tue Aug 24 16:02:57 1999
+Check:[NORMAL] Database check initiated by root. :: Tue Aug 24 16:02:58 1999
+Check:[WARN] Data in file /playarea/newfile has been modified by 78%. :: Tue Aug 24 16:02:58 1999
+Check:[WARN] Time of file /playarea/newfile has been modified. :: Tue Aug 24 16:02:58 1999
+Check:[WARN] Time of file /playarea/timechange has been modified. :: Tue Aug 24 16:02:59 1999
+Check:[WARN] Mode of file /playarea/modechange has been modified. :: Tue Aug 24 16:03:00 1999
+Check:[WARN] Data in file /playarea/everythingchanged has been modified by 78%. :: Tue Aug 24 16:03:01 1999
+Check:[WARN] Time of file /playarea/everythingchanged has been modified. :: Tue Aug 24 16:03:01 1999
+Check:[WARN] File /playarea/deletedfile has been deleted. :: Tue Aug 24 16:03:02 1999
+Check:[NORMAL] Database check completed successfully. :: Tue Aug 24 16:03:03 1999
+Delete:[NORMAL] File /playarea/newfile delete attempted by root. :: Tue Aug 24 16:03:04 1999
+Check:[NORMAL] Database check initiated by root. :: Tue Aug 24 16:03:04 1999
+Check:[WARN] Data in file /playarea/newfile has been modified by 78%. :: Tue Aug 24 16:03:04 1999
+Check:[WARN] Time of file /playarea/newfile has been modified. :: Tue Aug 24 16:03:04 1999
+Check:[WARN] Time of file /playarea/timechange has been modified. :: Tue Aug 24 16:03:04 1999
+Check:[WARN] Mode of file /playarea/modechange has been modified. :: Tue Aug 24 16:03:04 1999
+Check:[WARN] Data in file /playarea/everythingchanged has been modified by 78%. :: Tue Aug 24 16:03:04 1999
+Check:[WARN] Time of file /playarea/everythingchanged has been modified. :: Tue Aug 24 16:03:04 1999
+Check:[WARN] File /playarea/deletedfile has been deleted. :: Tue Aug 24 16:03:04 1999
+Check:[NORMAL] Database check completed successfully. :: Tue Aug 24 16:03:04 1999
+Check:[NORMAL] Database check initiated by root. :: Tue Aug 24 16:03:05 1999
+Check:[WARN] Time of file /playarea/timechange has been modified. :: Tue Aug 24 16:03:05 1999
+Check:[WARN] Mode of file /playarea/modechange has been modified. :: Tue Aug 24 16:03:05 1999
+Check:[WARN] Data in file /playarea/everythingchanged has been modified by 78%. :: Tue Aug 24 16:03:05 1999
+Check:[WARN] Time of file /playarea/everythingchanged has been modified. :: Tue Aug 24 16:03:05 1999
+Check:[WARN] File /playarea/deletedfile has been deleted. :: Tue Aug 24 16:03:05 1999
+Check:[NORMAL] Database check completed successfully. :: Tue Aug 24 16:03:05 1999
+Delete:[NORMAL] File /playarea/newfile undelete attempted by root. :: Tue Aug 24 16:03:06 1999
+Check:[NORMAL] Database check initiated by root. :: Tue Aug 24 16:03:07 1999
+Check:[WARN] Data in file /playarea/newfile has been modified by 78%. :: Tue Aug 24 16:03:07 1999
+Check:[WARN] Time of file /playarea/newfile has been modified. :: Tue Aug 24 16:03:07 1999
+Check:[WARN] Time of file /playarea/timechange has been modified. :: Tue Aug 24 16:03:07 1999
+Check:[WARN] Mode of file /playarea/modechange has been modified. :: Tue Aug 24 16:03:07 1999
+Check:[WARN] Data in file /playarea/everythingchanged has been modified by 78%. :: Tue Aug 24 16:03:07 1999
+Check:[WARN] Time of file /playarea/everythingchanged has been modified. :: Tue Aug 24 16:03:07 1999
+Check:[WARN] File /playarea/deletedfile has been deleted. :: Tue Aug 24 16:03:07 1999
+Check:[NORMAL] Database check completed successfully. :: Tue Aug 24 16:03:07 1999
+Rebuild:[CRITICAL] Database rebuild attempted by root. Conf file rescanned. :: Tue Aug 24 16:03:07 1999
+Check:[NORMAL] Database check initiated by root. :: Tue Aug 24 16:03:08 1999
+Check:[NORMAL] Database check completed successfully. :: Tue Aug 24 16:03:08 1999

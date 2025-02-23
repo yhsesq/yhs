@@ -1,0 +1,20 @@
+mkdir /opt
+mkdir /opt/sentinel
+make all 
+make distclean 
+make all
+make genheader 
+make sentinel 
+make genheader-user 
+make sentinel-user
+tar xvf exepak-1.2.tar
+cd exepak-1.2
+pwd
+./makeall
+cd ..
+make compress
+make genheader
+make clean
+rm -f sentinel~
+rm -f sentinel-user~
+

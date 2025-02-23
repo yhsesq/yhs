@@ -1,0 +1,182 @@
+ZCOCm0.3(Ver.5m0.3, ZDOC Ver.5.0.1b3 ) 99/08/09
+
+
+The base of ZDOCm is ZDOC. 
+  Original  ZDOC is Z-DOC [Ver.5.0.1b3]
+     ZDOC Ver.5.0.1b3  by by Zurk Technology Inc.
+     http://www.geocities.com/Area51/7689/zdoc.html
+
+ZDOC/ZDOCm is a GPLised industry standard DOC file format viewer/editor 
+with a few extras. It's free.
+ZDOCm will support compressed/encrypted and normal DOC file.
+A few extras of ZDOCm is find function.
+
+
+I notice that the end of the line for ZDOC development.
+and ZDOCm was born.
+I changed a lot of code on ZDOC program. 
+
+
+*Menu
+File
+	NewDoc, NewRec, Password, Delete Doc, Delete Rec, Close
+Edie
+	Undo, Cut, Copy, Paste, Select, Find, Find again
+Option
+	Go to Top, Go to Bottom, PrevRec, NextRec, Relad, Save
+Help
+	Info, About
+
+*Screen
+	Title, Field, Buttons
+  *Title section
+	Title, choice Doc, mark
+  *Buttons section
+        Open, mark, PageUP, PageDown, Find, Find again, Save, About(pos)
+
+
+*functin
+NewDoc(menu)
+  Create new doc.
+NewRec(menu)
+  Create new record.
+Password(menu)
+  Set password. It use encrypted.
+Delete Doc(menu)
+  Delete selected doc.
+Delete Rec(menu)
+  Delete current recoad.
+Close(menu)
+  Close current doc.
+Undo, Cut, Copy, Paste, Select(menu)
+  linke MemoPad.
+Find, Find again(menu), Find, Find again(button)
+  Find String or Record.
+     ignore case distinctions
+     Record : Record No [, offset]
+     ex) "3", "4,5"
+  Display position abide by ScrollF.
+Go to Top/Go to Bottom(menu)
+  InsPt move Top/Bottom of Recoad/Doc.
+PrevRec/NextRec(menu)
+  InsPt move prev/next recoad.
+Reload(menu)
+  Zdocm drop edited recoad, and reload record.
+Save(menu), Save(button)
+  Save current record.
+Info(menu)
+  Display current infomation.
+  and ZDOCmsetting, Selected doc operation.
+About(menu)
+  about ZDocm.
+
+choice Doc(title)
+  Select doc.
+Open(button)
+  Open selected doc.
+RecUP/RecDown(screen button)
+  Up/Down scroll. 
+  Scroll step abide by ScrollS.
+About(button)
+  like RecDown(button) when doc is open.
+Up/Down(Hard button)
+  Up/Down scroll. 
+  Scroll step abide by ScrollH.
+
+
+*Setting
+ZDOCm drop setting when ZDOCm is end.
+Autosave
+  Save record when it is need.
+Font
+  Set Field font, reopen is need..
+  0:stdFont, 1:boldFont, 2:largeFont
+Scroll
+  Set scroll step.
+  H:Up/Down Key, S:RecUp/RecDown Button.
+  F:position after find. 
+
+Doc Name
+  Field is doc name. You can rename doc.
+Backup
+  Change backup bit of selected doc db.
+Ok: 
+Cancel:
+Delete: Delete selected doc.
+
+
+
+Operation
+ERead doc
+  Choice doc. open.
+  and You use [up/down],[RecUp]/[RecDown].
+
+
+ECreate new doc
+  Menu[File]-[NewDOC], input new name.
+  If wish select compressed or encrypted.
+
+EEdit DOC
+  Save before record change.
+  If autosave is off, ZDOCm drop edited recoad  when doc close.
+
+Record Size is 4K.
+Record is the basic unit of ZDOCm.
+
+
+ZDOC is GPL.
+
+
+I changed a lot of code on ZDOC program. 
+  Changed summary
+    I changed source indent.
+    I changed variable name.
+    I changed Magic number.
+    I changed range number.
+    I changed procedure.
+    I divided procedure.
+    I changed that the record size is variable.
+  Del function
+    SerialTx/SerialRx
+  Add function
+    Del Record
+    About information
+    Find
+
+
+
+ZDOCm  history
+99/08/11 ZCOCm0.3(Ver.5m0.3, ZDOC Ver.5.0.1b3 ) 
+  bug fix.
+  Change Scroll function.
+  Change Save function.
+  etc.
+
+99/05/20 ZCOCm0.2(Ver.5m0.1, ZDOC Ver.5.0.1b3 ) 
+    I changed a lot of code on ZDOCm0.1 program. 
+    Add function. Find.
+  
+  ZCOCm0.1(Ver.5m0.1, ZDOC Ver.5.0.1b3 )
+    has bugs.
+      Open/Close(,etc) is memory leak.
+        location at menuitemID_close
+          (m0.2) FldSetTextHandle(field,NULL); -> ClearFieldText(field);
+      Lock/Unlock is resource leak.
+        location at saverec func.
+          (M0.2)relation: MemHandleUnlock(recHand); ->MemPtrUnlock(recPtr);
+    Del function
+      SerialTx/SerialRx
+    Add function
+      Del Record
+      About information
+
+
+
+
+Thank zurk@geocities.com .
+
+ Sorry. I can use English very little. I can use Japanese.
+
+I am grateful to everyone and you. mizotec <HGH01156@nifty.ne.jp>
+  http://member.nifty.ne.jp/mizotec/  (Japanese)
+

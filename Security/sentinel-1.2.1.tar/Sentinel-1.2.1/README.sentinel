@@ -1,0 +1,371 @@
+Sentinel v1.2.1c (Linux version. Portable to most unixes.)
+----------------
+[README File v0.08]
+
+Download
+--------
+
+http://zurk.sourceforge.net
+
+Installation 
+------------
+
+Note that by downloading this file you have agreed to the terms this 
+program is distrbuted under. Read the License section to
+see the licensing terms.
+Note that zlib and GTK libs 1.2-dev must be present in your system to 
+compile. libc the standard c libraries and a compiler are also required.
+It is recommended that you read the section "Readme" in this file 
+before installing. However, for those who are too lazy to go
+that far, here is the simplified standard installation procedure :
+------------------------------------------------------------------
+
+[0] Type ./makeall
+
+[1] Type make install
+
+[2] Edit the file /opt/sentinel/sentinel.conf to match your system
+
+[4] Change to /opt/sentinel as root and type ./sentinel -init
+
+[5] Now run the command "/opt/sentinel/sentinel -check" (or fullcheck) whenever you want to check 
+the directories. Remember that everything is logged to the logfile /opt/sentinel/sentinel.2 and 
+stored in plain ascii text. Always run sentinel as root (even when running it with the -check option). 
+
+**OR**
+
+0] su or login as root.
+
+1] Untar the distribution. If you are reading this you should have done this already.
+
+2] Use nano/vi/emacs/jot/pico to edit the file sentinel.h...Somewhere near the beginning you 
+should see a key variable. Change the hex characters (use 0-9,A-F in any combo) for 
+the key variable to something random. This is your private key.( key={..} )
+
+3] Type : "make" and wait for it to finish compiling.
+
+4] Type : "rm sentinel.c" (i.e. erase off the file sentinel.c with your secret key)
+
+5] Type : "mkdir /opt/sentinel" (i.e. make the directory /opt/sentinel)
+
+6] Type : "cp sentinel /opt/sentinel" (i.e. copy the sentinel executable to /opt/sentinel)
+
+7] Type : "cd /opt/sentinel" (i.e. change to the sentinel directory)
+
+8] Use vi/jot/emacs/pico/nano to create a file called sentinel.conf
+------------------------------------
+e.g. Sample sentinel.conf file :
+/usr
+/bin
+-------------------------------------
+The sentinel.conf file is just a list of directories which you want checked. It must be
+in /opt/sentinel, but can be anything you want. Its recursive - use only the base directory
+and it will check any other directories inside the base one. Dont put *anything* in the file
+other than directories you want checked. See the sample sentinel.conf file with the tar package.
+Please do *not* add /dev and /proc directories to the sentinel conf file. The entries in those
+directories are device files and various other types of files which are *not* regular files.
+
+9] Type : "chmod 700 /opt/sentinel/sentinel" (i.e. change the file mode to root only perms)
+
+10] Type : "./sentinel -init" (i.e. run the executable with the -init option)
+
+11] Now run the command "/opt/sentinel/sentinel -check" (or fullcheck) whenever you want to check 
+the directories. Remember that everything is logged to the logfile /opt/sentinel/sentinel.2 and 
+stored in plain ascii text. Always run sentinel as root (even when running it with the -check option). 
+
+-----End of installation instructions----------
+
+Note that you can run it with the nice command in the background automatically with crontab at
+various intervals.
+
+License
+-------
+/********************************************************************
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ ******************************************************************** */
+
+See license.txt included with the distribution for the full license terms. 
+
+Files
+-----
+
+Files included in this package are :
+
+Makefile 		Standard makefile for Sentinel.
+license.txt 		GNU GPL license file.
+rmd160mc.h 		Header file for RIPEMD160 MAC reference implementation.
+sclean 			Cleaning script (Programming purposes - ignore)
+sentinel.102c 		c file from earlier version of Sentinel.
+sentinel.117c           c file from earlier version of Sentinel.
+sentinel.121c           c file from current version of Sentinel.
+sentinel.c 		Main Sentinel c code file.
+sentinel.conf.bak	Sentinel.conf file backup (Programming purposes - ignore)
+README.sentinel  	This readme file.
+rmd160mc.c   		RIPEMD160 MAC reference implementation c code.
+s           		Compiling script (Programming purposes - ignore)
+stest			Automated sentinel test script (Programming purposes - ignore)
+sample.testoutput	Reference test output. checked for validity.
+sentinel.bak   		Backup of sentinel c code (Programming purposes - ignore)
+sentinel.conf		Sample sentinel.conf file.
+sentinel.h 		Standard headers.
+readme.gsentinel	Readme File for gSentinel (Optional, may be removed/package seperately)
+readme.sentineld	Readme file for SentinelD (Optional, may be removed/package seperately)
+gsentinel.c		GTK based GUI frontend (Optional, may be removed/package seperately)
+sentineld.c		Daemon frontend (Optional, may be removed/package seperately)
+sverify.tar 		Sentinel Sverify package (Optional, may be removed/package seperately)
+sentinel.spec		Sentinel RPM spec file (Optional, may be removed/package seperately)
+sbatch			Batch file to demonstrate potential use of sentinel.batch files.
+
+Readme
+------
+
+Sentinel is designed to detect changes to the integrity of 
+directories and files on a disk. It tries to defeat the usual 
+attacks (even by persons with root/superuser equivalent access) 
+that have plagued other products such as the commercial 
+"Tripwire(TM)", fcheck.pl or viper.pl. It is by no means a 
+replacement for any other product and does not claim to offer
+*any* of the functionality of *any* other product such as Tripwire(TM)
+, fcheck or viper. It is *not* a replacement for any of these
+products or any others. It is by no means *better* or *worse*
+than any of these tools. It cannot be compared as it has a 
+different purpose and a different development model with different 
+goals. 
+
+Note that sentinel will not try to "rebuild", "repair" or 
+even inform you how severe the changes are or whether your
+system has been compromised. It is *not* a security system. 
+It is simply a file/disk integrity tool. If your system is hit
+by hackers/crackers/script kiddies etc, sentinel will make you aware
+of changes to files or will simply terminate with an error if its
+own files are compromised. It is recommended that the only corrective
+action you can take is :
+FORMAT/REINITIALISE THE DRIVE(S) ON YOUR SYSTEM.
+FORMAT/REINITIALISE THE DRIVE(S) ON ANY SYSTEMS WHICH HAVE TRUSTED YOUR SYSTEM.
+REINSTALL THE OS ON ALL AFFECTED SYSTEMS.
+CHANGE ALL PASSWORDS.
+INSTALL ANY UPDATES/PATCHES.
+
+Remember : When in doubt, be paranoid.
+
+[Common Problems and Solutions]
+-------------------------------
+
+Sentinel aborts while doing xyz operation and cannot restart
+(usually ERROR: sentinel.lock file is already present...)
+------------------------------------------------------------
+If sentinel aborts for any reason while doing a check and refuses to 
+restart delete off the sentinel.lock file.
+If it aborts while doing an init, delete off the .sig files as well
+as the .lock file and try again.
+
+Sentinel cannot open abc file...
+(usually RMDBinary: Cannot open...)
+-----------------------------------
+This usually indicates a bad link on the drive (this has nothing to do
+with the sentinel executable as some have asked me). If the file is a 
+link, check to see if it is correctly linked to a file that exists on 
+your drive. If it is a device file, it cannot be opened. please remove 
+the /dev and /proc directories from the sentinel.conf file. If you use
+autoinit sentinel will ignore these files...however it is recommended 
+you do not leave bad links on your drive.
+
+
+[Security]
+----------
+
+Sentinel relies on the RIPEMD 160bit MAC algorithm (believed to be
+more secure than MD5 (which is 128bits) and not covered by patents).
+It will protect any file/directory structure (max path length is 16,384 
+bytes which should be enough for most systems i can think of, including 
+an origin 2000 supercomputer that i tested it on) using a 160 bit
+signature that is tied to your secret key.
+It is extremely hard for any attackers to compromise the RIPEMD signature,
+hence we can regard it as secure. Sentinel adds the signature to a database
+which is stored as plaintext. A database signature is then computed which is
+also stored and checked each time the database is opened. New signatures
+are created everytime the database is rebuilt. In addition it also computes
+and adds a signature for the logile where all events are stored and for the
+executable itself. These are also checked when the database is opened. In
+addition it also checks for root access to prevent users from compromising it 
+(and it is recommended that you chmod 700 the sentinel file with root ownership. 
+Do *not* suid root the executable).  You can also chattr +i the sentinel file
+optionally and chattr your /usr /bin /sbin directories. For further security,
+it is recommended you read the linux security administrators handbook or visit
+a security related site. 
+
+
+[Performance]
+-------------
+
+It should be fast on most systems. On my K6-2 it can max out the disk transfer 
+(20MBps SCSI-2 drive) while using only 30% of the CPU for computing the signatures 
+in the background. The disk transfer rate is the only limitation, the CPU of the 
+machine should not affect it significantly (unless you use it on a 386). On a 
+486 it consumed 80% of the CPU and maxed out the disk. Linux caching is efficient
+enough so that frequent read/writes from the temp file should not be a problem.
+Note that IDE disks use the CPU when doing transfers so sentinel will appear to use
+more CPU on systems with IDE disks. Typical speeds on modern hardware are as follows :
+On an IDE hard disk with 34.22MB/sec transfer rate (reads using hdparm -Tt /dev/hda
+ on a Maxtor 5T020H2 ATA disk with DMA enabled), a 733Mhz P-III CPU with 512MB SDRAM 
+and linux 2.2.18 (debian 2.2.r2) with 44% CPU usage :  
+					init		check	 	fullcheck
+24720 files totalling 216MB :           24sec		28sec		31sec
+98455 files totalling 1861MB :		245sec		219sec		320sec
+It appears to scale roughly linearly with increasing size which is expected and runs
+at roughly 20-25% of the max burst throughput of the disk on a linear read. Since its 
+doing reads and writes this is also well within normal parameters.  
+This program can be run in the background (its less of a memory hog than an httpd 
+fork) while doing checks. This program is *not* designed for performance -- it is
+designed for reliability and simplicity. If you want more performance, look elsewhere.
+
+[Code List]
+-----------
+
+Code Version : 0
+ Number		Error/Function
+---------	--------------
+!!0000f!!	Error: RMDBinary cannot open a file. bad link or /dev or /proc file.
+!!0001f!!	Error: OpenDir/Change dir failed in recursedir function
+!!0002f!!	Error: Stat failed in recursedir function
+!!0003!!	Error: ICheck detects a non root user executing a function meant for root.
+!!0004!!	Error: ICheck detects the executable file signature is missing.
+!!0005!!	Error: ICheck detects executable signature changes.
+!!0006!!	Error: ICheck detects actual argv[0] executable signature invalid.
+!!0007!!	Error: ICheck detects logfile signature invalid.
+!!0008!!	Error: ICheck detects filelist signature invalid.
+!!0009!!	Error: Lock file error - lock file already present.
+!!0010!!	Error: Cannot create lock file.
+!!0011!!	Error: Init sentinel.conf file is too small.
+!!0012!!	Error: Logfile too small to clean.
+!!0013!!	Error: Cannot open file when using addfile.
+!!0014!!	Error: Init Only root can execute init.
+!!0015!!	Error: Init executable file sig exists.
+!!0016!!	Error: Init Cannot open sentinel.conf file.
+!!5000!!	Function: OK. Quit normal.
+!!9989!!	Function: Undelete file.
+!!9990!!	Function: Delete file.
+!!9991!!	Function: Add file.
+!!9992!!	Function: Extra detail.
+!!9993!!	Function: Wipe logfile.
+!!9994!!	Function: Delete check.
+!!9995!!	Function: Cloak check.
+!!9996!!	Function: Rebuild database.
+!!9997!!	Function: Batch Check.
+!!9998!!	Function: Normal Check. 
+!!9999!!	Function: Init. 
+!!!!!!!!	Error: Failure detected. exit abnormally.
+
+Note: an f attachment indicates a string is passed which is relevant.
+Also note that from 1.2.0c onwards a sentinel -version command has been 
+added which will print the version number and the code table no.
+-autorebuild and -autoinit options have been added to allow skipping 
+bad link checks. Not recommended for use on the command line, only for
+the GUI.
+
+[Updates]
+---------
+
+1.2.1c - This release fixes no new bugs (none have been found) and is functionally
+the same as 1.2.0c. It adds a code option to detect files which have been *added*
+to the disk. Note that this makes it 50% slower on a full check than 1.2.0c...
+although with the -check option its as fast as 1.2.0c..
+
+1.2.0c - This release fixes no new bugs (none have been found) and is functionally 
+the same as 1.1.7c. It adds a code option to error messages and allows control via
+an external interface as well as an external header file which can be shared. A 
+graphical GTK interface will be added in a seperate package with an automated 
+RPM or TGZ package installation. The base Sentinel package will remain command 
+line only with a manual install. If you want easier installs, download the graphical 
+package. Note that the manual install is the most secure option...if you have the
+capability to manually install and use command line only, please do so. GUIs add
+too much crap, IMHO. This release should be between 20-40% faster than 1.1.7c. 
+
+1.1.7c - Minor improvements to the error messages in the code. Added the automated
+test script to the package. Also added a -batchcheck option to automate script executions
+for modified files (i.e. automated e-mail warnings to root, automated moves of files
+etc etc..).
+
+1.1.6c - Another minor bugfix release to correct a problem with adding files to the 
+database. This is a 1.1.x release problem. Also improves the documentation.
+
+1.1.4c - This is a minor bugfix release that removes the logfile wiping bug (i.e. when
+the logfile was wiped the new logfile was not signed). This is a 1.1.x release problem.
+
+1.1.2c - This is *not* a bugfix release. No bugs have been noted so far, hence none
+have been removed in this release. This release *adds* features (and possibly bugs :) 
+to the basic package. Note that if you are happy with the basic package, please do 
+*not* upgrade unless you really need these extra options. The basic package was fairly
+simple and this one adds a layer of complexity to it.
+-cloakcheck : Allows limited "cloaking" by changing the name of the process while 
+the check is being executed. Also reduces CPU consumption down to minimal levels, 
+but makes checking a *lot* slower. Note that this works with the BSD ps command
+but not the SysV ps. The SysV ps can be fooled by writing directly into kernel space,
+but for obvious reasons this is *not* done since it may make the system unstable.
+For SysV it is recommended that the sentinel program be copied to httpd or some other
+command to allow it to be less obvious from the regular ps or top checks. 
+-deletefile <filename> : Allows files to be "deleted" from the database. i.e. the files are
+not checked, but their signatures are preserved in the database.
+-deletecheck : Allows "deleted" files in the database to be checked. Same as -check otherwise.
+-undelete <filename> : Undeletes a "deleted" file.
+-addfile <filename> : Adds a single file to the database.
+In addition a 10K lock has been placed on the wipe command. The logfile cannot be wiped
+unless it is >10K in size. An argv[0] check in addition to the executable check has also
+been added.
+
+1.0.2c - Initial release.
+
+[Attacks]
+---------
+
+One obvious attack is the simplest one : Trojan Horse attack. If the executable
+is replaced with a trojan horse (fairly easy since source code is available),
+your security envelope is effectively eliminated. Hence it is recommended that
+after compiling you download the Sverify package and run it. Record the RIPEMD-160
+signature obtained, the print it out or write it down. You can periodically download
+the Sverify package (or burn it on CDR/WORM) and run it against the executable. It
+should generate the same signature every time or the executable is a trojan (if this 
+is the case it is recommended you follow the usual format/reinstall/change 
+passwords/install patches). Remember to check the open ports in your system (trojans
+often hook to or open ports) using netstat and lsof for checking the processes. The
+excellent ipchains command can also allow you to block ports (see the ipchains-howto).
+
+Another attack is a key compromise attack. If the attacker(s) obtain access to 
+your secret key you are basically fscked since they can now generate signatures
+for all the files and compromise them in any way. Hence it is highly recommended
+you follow the correct installation procedure and ensure that the C source code
+with your unique key is deleted after sentinel is recompiled. Treat the sentinel 
+file like a PGP secret keyfile. Note that you can also mount /opt/sentinel from 
+a removable media, reducing the chances of compromise. 
+
+A third attack is a write intercept attack where the data written to the disk is 
+moved to another disk. This is fairly hard to pull off and the probability of it
+is fairly low. In any event sentinel tries to defeat such attacks by ensuring it
+has locked the files which it writes to for the duration until the signature is
+computed. It also has a sentinel.lock file to prevent more than 1 copy of sentinel 
+running out of the same directory at 1 time. Note that more modern write intercept
+attacks can/will defeat this measure (for more information see www.phrack.com,
+Phrack Magazine Volume 7, Issue 51, September 01, 1997 article 9 of 17, title : 
+Bypassing Integrity Checking Systems) and only a kernel module can defeat such attacks.
+It is recommended that dynamic module loading is disabled in your system (recompile
+your kernel without the dynamic module loading option), to prevent such attacks.
+Note that /dev/kmem may allow modules to be loaded without that option and may not
+prevent *all* possible attacks.
+
+If anyone can send me any other possible attacks/scenarios and/or how to defeat them
+it would be appreciated. 
+
+<EOF>
+

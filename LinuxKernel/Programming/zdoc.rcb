@@ -1,0 +1,85 @@
+#include "zdoc.h"
+
+FORM ID formID_zdoc AT (0 0 160 160 )
+NOFRAME
+USABLE
+MENUID menuID_zdoc
+BEGIN
+        TITLE "ZDOC"
+        BUTTON "About" ID buttonID_zdoc AT ( 122 145 AUTO AUTO ) USABLE FRAME FONT 0
+        BUTTON "Open"  ID buttonID_open AT ( 2   145 AUTO AUTO ) USABLE FRAME FONT 0
+        BUTTON ""     ID buttonID_up   AT ( 45  145 AUTO AUTO ) USABLE NOFRAME FONT 3
+        BUTTON ""     ID buttonID_down AT ( 60  145 AUTO AUTO ) USABLE NOFRAME FONT 3
+        BUTTON "Save"  ID buttonID_save AT ( 85  145 AUTO AUTO ) USABLE FRAME FONT 0
+        FIELD ID fieldID_zdoc AT ( 2 20 158 121 ) USABLE EDITABLE MULTIPLELINES DYNAMICSIZE MAXCHARS 4096 AUTOSHIFT UNDERLINED FONT 0
+        POPUPTRIGGER "                           " ID listID_popuplist AT (40 1 AUTO AUTO) LEFTANCHOR
+        LIST "                           " ID listID_dblist AT (40 1 AUTO AUTO) VISIBLEITEMS 10 NONUSABLE
+        POPUPLIST ID listID_popuplist listID_dblist
+        GRAFFITISTATEINDICATOR AT ( 158 158 )
+END
+
+
+MENU ID menuID_zdoc
+BEGIN
+        PULLDOWN "File"
+	BEGIN
+                MENUITEM "New DOC"   menuitemID_new
+                MENUITEM "New Rec"   menuitemID_rec
+                MENUITEM "Password"  menuitemID_pass
+                MENUITEM "Delete" menuitemID_delete
+                MENUITEM "Close" menuitemID_close
+	END
+
+        PULLDOWN "Edit"
+        BEGIN
+                MENUITEM "Copy"    menuitemID_copy
+                MENUITEM "Paste"   menuitemID_paste
+        END
+
+        PULLDOWN "Comms"
+        BEGIN
+                MENUITEM "SerialTx"    menuitemID_tx
+                MENUITEM "SerialRx"    menuitemID_rx
+        END
+
+        PULLDOWN "Help"
+        BEGIN
+                MENUITEM "Info"  menuitemID_info
+		MENUITEM "About" menuitemID_about
+        END
+END
+
+
+ALERT ID alertID_about
+INFORMATION
+BEGIN
+        TITLE "About ZDOC"
+        MESSAGE "ZDOC Document Reader\nby Zurk Technology Inc. Ver.5.0.1b4 1998-99\nhttp://www.geocities.com/Area51/7689/zdoc.html\nThis program is distributed under the terms of the GPL v.2.0 or later.\n Download the GPL from\n        www.gnu.org \n"
+	BUTTONS "Done"
+END
+
+FORM ID alertID_new AT ( 0 0 160 160 )
+FRAME
+USABLE
+BEGIN
+        TITLE "New DOC file"
+        CHECKBOX "Encrypted"  ID checkID_enc  AT ( 20 100 AUTO AUTO ) USABLE
+        CHECKBOX "Compressed" ID checkID_comp AT  ( 20 120 AUTO AUTO ) USABLE
+        LABEL "Enter name of new DOC database :" AUTOID AT ( 10 40 ) FONT 0
+        FIELD ID fieldID_new AT ( 20 60 100 60 ) NONUSABLE EDITABLE UNDERLINED LEFTALIGN SINGLELINE AUTOSHIFT MAXCHARS 20 FONT 0
+        BUTTON "Done" ID buttonID_new AT ( 122 145 AUTO AUTO ) USABLE FRAME FONT 0
+END
+
+FORM ID formID_null AT ( 0 0 160 160 )
+FRAME
+USABLE
+BEGIN
+        TITLE "KEY"
+        LABEL "Enter the encrypt/decrypt password :" AUTOID AT ( 5 40 ) FONT 0
+        FIELD ID fieldID_abc AT ( 20 60 100 60 ) NONUSABLE EDITABLE UNDERLINED LEFTALIGN SINGLELINE AUTOSHIFT MAXCHARS 8 FONT 0
+        BUTTON "Done" ID buttonID_abc AT ( 122 145 AUTO AUTO ) USABLE FRAME FONT 0
+END
+
+
+ICON "ZDOC.BMP"
+VERSION ID 1 "5.0.1b4"

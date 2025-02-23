@@ -1,0 +1,185 @@
+ZDOC Ver6.0.0a1
+---------------
+
+-------------------------BUG FIXED----------------------------
+[0.0] Alpha patch with loader rewrite. Crash on loading DOC files due
+to invalid string/charptr conversion. Will be fixed soon.
+-------------This bug is now no longer present.---------------
+
+ZDOC Ver5.1.0b
+--------------
+
+[0.0] Merged Mizotec's ZDOCm series with original. 
+
+ZDOC Ver5.0.1b4
+---------------
+
+[0.0] Field Handler ok. Added find disabling. 20 filename limit still exists. 
+
+ZDOC Ver5.0.1b3
+---------------
+
+[0.0] Patch testing on new field handler.
+
+-------------------------BUG FIXED----------------------------
+[0.1] NEW DOC problem with list handler.
+-------------This bug is now no longer present.---------------
+
+ZDOC Ver5.0.0b2
+---------------
+
+-------------------------BUG FIXED----------------------------
+[0.0] Invalid database index pointers generated.
+-------------This bug is now no longer present.---------------
+
+ZDOC Ver5.0.0b
+--------------
+
+[0.0] Invalid memory chunk ptr generated.  Keyboard Handler.
+
+[0.1] Invalid database index pointers generated.
+
+ZDOC Ver5.0.0a
+--------------
+
+[0.0] Gremlins detect errors in invalid memory chunk ptrs.
+
+ZDOC Ver4.0.5a2
+---------------
+
+-------------------------BUG FIXED----------------------------
+[0.0] Gradual growth of ZRAM temporary memory file (10K->55K observed).
+-------------This bug is now no longer present.---------------
+
+[0.1] Gremlins detect Overlocking of field ptr. Also possibility
+of overlock if field imposed length exceeded. 
+
+[0.2] Possibility of bus error on newly created files (when editing).
+
+[0.3] Possibility of Underlocking of field ptr when increasing the
+size of fields by typing text using the keyboard.
+
+-------------------------BUG FIXED----------------------------
+--------------------------BUG DELETED------------------------------
+[0.4] OS 3.x may detect bad form handler when loading form for creating
+      new files. [OS 3.x ONLY]
+---This bug is still present but specific to OS 3.x and deleted----
+[0.4b] Patch optained from Palmpilot Developers site. Bug removed.
+-------------This bug is now no longer present.---------------
+
+ZDOC Ver4.0.5a1
+---------------
+
+-------------------------BUG FIXED----------------------------
+[0.0] MAJOR Database corruption due to MemHandler(?) bugs.
+
+[0.1] MAJOR Memory leaks due to invalid MemHandlers(?).
+
+[0.2] FIX temporary patch fixed to stop large memory leaks.
+
+[0.3] MAJOR MemChunkPtr leak in Up->Uncompress().
+-------------This bug is now no longer present.---------------
+
+ZDOC Ver4.0.5a
+--------------
+
+-------------------------BUG FIXED----------------------------
+[0.0] MINOR MemHandler bug in Compressed Save.
+-------------This bug is now no longer present.---------------
+
+[0.1] MAJOR Database corruption due to MemHandler(?) bugs.
+
+[0.2] MAJOR Memory leaks due to invalid MemHandlers(?).
+
+[0.3] FIX temporary patch fixed to stop large memory leaks.
+
+-------------------------BUG FIXED----------------------------
+[0.4] MAJOR bug in current database record releases.
+-------------This bug is now no longer present.---------------
+
+ZDOC Ver3.0.2a
+--------------
+-------------------------BUG FIXED----------------------------
+[0.0] MINOR Memhandler bug in StopApplication().
+
+[0.1] MINOR MemHandler bug in Uncompressed Save.
+
+[0.2] MINOR MemHandler bug in Up.
+
+[0.3] MINOR MemHandler bug in Down.
+-------------This bug is now no longer present.---------------
+
+ZDOC Ver3.0.1a
+--------------
+
+[0.0] MINOR Memhandler bug in StopApplication().
+
+[0.1] MINOR MemHandler bug in Uncompressed Save.
+
+[0.2] MINOR MemHandler bug in Up.
+
+[0.3] MINOR MemHandler bug in Down.
+
+ZDOC Ver2.0.1c [Test release]
+--------------  ------------
+
+[0.0] ERRATA display of text cut off at the bottom part of the 4K record.
+Usually 5-6 characters omitted and a binary character displayed in place.
+Being fixed.
+
+[0.1] ERRATA Garbage characters displayed at end-of-record.
+
+<-- User reported bugs here -->
+
+[0.1] MINOR Error Handler fault reported. <--Removed in 3.0.1a release.
+
+<----------------------------->
+
+ZDOC Ver2.0.1b
+--------------
+
+-------------------------BUG FIXED----------------------------
+[0.0] MINOR bug due to StopApplication()
+
+[0.1] MINOR bug due to invalid handlers. Is not triggered
+by the major one. Being fixed.
+-------------This bug is now no longer present.---------------
+
+[0.2] FIX required to save files. [Version upgrade to 3.x when fixed]
+
+ZDOC Ver2.0.1a
+--------------
+
+-------------------------BUG FIXED----------------------------
+[0.0] MAJOR memory handling bug causes crashes on debug ROMs.
+Low Memory Checksum Failures due to invalid DmWrites
+for some reason. I've contacted 3COM and asked them for
+help. Lets see what they say. <---3COM helped fix this bug.
+-------------This bug is now no longer present.---------------
+
+[0.1] MINOR bug due to invalid handlers. Seems to be triggered
+by the major one. Wait for major fix before proceeding.
+
+ZDOC Ver1.0.1a
+--------------
+
+[0.0] MAJOR memory handling bug causes crashes on debug ROMs.
+Low Memory Checksum Failures due to invalid DmWrites
+for some reason. I've contacted 3COM and asked them for
+help. Lets see what they say.
+
+[0.1] MINOR bug due to invalid handlers. Seems to be triggered
+by the major one. Wait for major fix before proceeding.
+
+-------------------------BUG FIXED----------------------------
+[0.2] Slight glitch with decompression. Generates artifacts.
+-------------This bug is now no longer present.---------------
+
+ZDOC Ver0.0.0
+-------------
+
+Bugs eliminated. No bugs present as of writing this.
+Full version released.
+
+<--DELETED BUG REPORTS [0.0-5.0]-->
+-------------------------------------------------------------------------------

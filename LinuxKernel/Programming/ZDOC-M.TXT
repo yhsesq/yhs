@@ -1,0 +1,189 @@
+ZCOCm0.3(Ver.5m0.3, ZDOC Ver.5.0.1b3 ) 99/08/09
+
+
+ZDOCmは、ZDOCが元になっています。
+  元のZDOCは Ver.5.0.1b3 です。
+     ZDOC Ver.5.0.1b3  by by Zurk Technology Inc.
+     http://www.geocities.com/Area51/7689/zdoc.html
+
+
+ZDOC(ZDOCm)は、GPLによる、若干拡張された 標準DOCファイルの
+リーダー/エディターです。
+ZDOCmは圧縮/暗号化 そして通常のDOCファイルをサポートしようとしています。
+ZDOCmの追加機能の一つは、検索機能です。
+
+
+元のZDOCの開発が中止になった事を知ったので、ZDOCを変更し、ZDOCmを作成
+しました。機能も追加/削除しています。ZDOCのソースの多くを変更しました。
+
+
+*Menu
+File
+	NewDoc, NewRec, Password, Delete Doc, Delete Rec, Close
+Edit
+	Undo, Cut, Copy, Paste, Select, Find, Find again
+Option
+	Go to Top, Go to Bottom, PrevRec, NextRec, Relad, Save
+Help
+	Info, About
+
+*Screen
+	Title, Field, Buttons
+  *Title section
+	Title, choice Doc, mark
+  *Buttons section
+        Open, mark, RecUP, RecDown, Find, Find again, Save,About(pos)
+
+*機能説明
+NewDoc(menu)
+  新しいDocを作成します。
+NewRec(menu)
+  現在のレコードの次にレコードを作成します。
+Password(menu)
+  暗号化に使用するPasswordを指定します。
+Delete Doc(menu)
+  選択しているDocを削除します。
+Delete Rec(menu)
+  現在のレコードを削除します。
+Close(menu)
+  開いているDocを閉じます。
+Undo, Cut, Copy, Paste, Select(menu)
+  MemoPad等と同様です。
+Find, Find again(menu), Find, Find again(button)
+  文字列かレコードを指定すると、その文字列/レコードを探し、該当する
+  レコード,オフセットに移動します。
+     文字列は、大小文字の違いを無視します。
+     レコードは、レコード番号とオフセットを指定します。
+           Rec[, off]
+           ex) "3", "2,400"
+  該当する位置は、画面の先頭からScroll Fの指定に従った行に表示されます。
+  ex)Scroll Fが1であれば、2行目に表示されます。
+Go to Top/Go to Bottom(menu)
+  レコード/Docの先頭/最後に移動します。
+PrevRec/NextRec(menu)
+  前/後のレコードに移動します。
+Relad(menu)
+  現在の編集中のレコードを再度Docより読み込みます。
+  編集は失われます。
+Save(menu), Save(button)
+  現在編集中のレコードをDocへ書き込みます。
+Info(menu)
+　現在の状態を表示します。
+  また、ZDoc/選択しているファイルの設定を変更します。
+About(menu)
+  ZDocmの案内
+
+choice Doc(title)
+  操作対象のDocを選択します。
+Open(button)
+  選択しているDocを開きます/閉じます。
+RecUP/RecDown(button)
+  Scroll Hの指定量前/後スクロールします。
+About(button)
+  Docを開いている時は、RecDown(button)と同じです。
+
+設定
+ZDOCmを終了すると、ZDOCmに対する設定は、初期値に戻ります。
+Autosave
+  チェックがついている時は、
+  レコードが変わる時,Docを閉じる時等に自動的にSaveします。
+Font
+  指定のフォントでDocを表示します。Open後反映されます。
+  0:stdFont, 1:boldFont, 2:largeFont
+Scroll
+  スクロール量を指定します。(0はレコード単位)
+  H:Up/Down Key, S:RecUp/RecDown Button, F:Find
+
+Doc Name
+  選択しているDocの名前、リネームできます。
+Backup
+  選択しているDocのBackupフラグの状態。変更できます。
+Ok: 設定変更を有効にします。
+Cancel: 設定変更を無効にします。
+Delete: 選択しているDocを削除します。
+
+
+
+操作方法
+・DOCファイルを読む
+  タイトル部のDOCリストより目的のDOCを指定して、[Open]ボタンを押します。
+  [up/down]キーや、[RecUp]/[RecDown]ボタンにより読み進むことができます。
+
+・新しいDOCファイルを作成する
+ Menu[File]-[NewDOC]で名前を入力します。
+   圧縮された か 暗号化された(ZDOC独自?) DOCファイルも作成できます。
+   圧縮/暗号は二者択一です。
+   暗号化は、読み書き時にPassword画面で指定したkeyが使用されます。
+
+・DOCファイルを編集する
+  目的のDOCファイルをオープンします。
+  編集後[Save]します。
+  Save前にZDOCmを終了させると編集は失われます。(AutoSaveがOffの時)
+  ZDOCmはレコード単位(最大4K)でLoad/Saveします。
+  編集できなくなった時は、レコードが4Kになった時です。分割してください。
+  
+
+・DOCファイルの削除
+  目的のDOCを選択後、Fielメニューより[Del Doc]を選択します。
+  確認しないので注意してください。
+  Menu[Info]でも削除できます。
+
+
+
+ZDOCのソースコードは大きく変えました。
+  いくつかのバグ修正、ソース中の変数名、インデント
+  関数の分割等を行いました。
+
+
+ OriginalのZODCに従います。 GPLに従います。
+
+I changed ZDOC program. 
+  Original  ZDOC is Z-DOC [Ver.5.0.1b3]
+
+Changed summary
+  I changed source indent.
+  I changed variable name.
+  I changed Magic number.
+  I changed range number.
+  I changed procedure.
+  I divided procedure.
+  I changed that the record size is variable.
+  
+  I have not test for SerialTx/SerialRx, and no plan.
+Thank zurk@geocities.com .
+
+ZDOCm  history
+
+99/08/11 ZCOCm0.3(Ver.5m0.3, ZDOC Ver.5.0.1b3 ) 
+  bug fix.
+  Change Scroll function.
+  Change Save function.
+  etc.
+
+99/05/20 ZCOCm0.2(Ver.5m0.1, ZDOC Ver.5.0.1b3 )
+    I changed a lot of code on ZDOCm0.1 program. 
+    Add function. Find.
+  
+  ZCOCm0.1(Ver.5m0.1, ZDOC Ver.5.0.1b3 )
+    have bugs.
+      Open/Close(,etc) is memory leak.
+        location at menuitemID_close
+          (m0.2) FldSetTextHandle(field,NULL); -> ClearFieldText(field);
+      Lock/Unlock is resource leak.
+        location at saverec func.
+          (M0.2)relation: MemHandleUnlock(recHand); ->MemPtrUnlock(recPtr);
+    Del function
+      SerialTx/SerialRx
+    Add function
+      Del Record
+      About information
+
+その他
+ 元が出身のため、無理して英語の説明をつけています:-)
+
+
+
+motto: みんなに感謝,あなたに感謝　(為に生きる Rev.S.M.ムーン)
+I am grateful to everyone and you. mizotec <HGH01156@nifty.ne.jp>
+  http://member.nifty.ne.jp/mizotec/
+

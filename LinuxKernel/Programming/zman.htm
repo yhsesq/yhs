@@ -1,0 +1,214 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (Win95; I) [Netscape]">
+   <META NAME="Author" CONTENT="Zurk Technology Inc.">
+   <TITLE>Z-DOC/PalmPilot</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER><IMG SRC="http://www.geocities.com/Area51/7689/zdoc.jpg" NOSAVE HEIGHT=500 WIDTH=660></CENTER>
+
+<CENTER><B><FONT COLOR="#3333FF"><FONT SIZE=+4>Z-DOC / PalmPilot</FONT></FONT></B></CENTER>
+ZDOC is a GPLised industry standard DOC file format viewer/editor with
+a few extras. It is released only under the terms of the <A HREF="http://www.gnu.org">GNU</A>
+GPL. Please read the files GPL.TXT and ZDOC.TXT for a full description
+and terms of the GPL as well as an introduction to ZDOC.
+
+<P>You can download ZDOC from the ZDOC Programmers page by <A HREF="http://www.geocities.com/Area51/7689/pilot.html">clicking
+here</A>.
+
+<P>ZDOC Manual :-
+
+<P>Preliminary Manual Version 0.0.0a
+<BR>Covers ZDOC Releases 0.x through 6.x
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+<CENTER><TABLE BORDER=0 CELLSPACING=5 CELLPADDING=5 WIDTH="100%" >
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD ALIGN=LEFT VALIGN=TOP><IMG SRC="http://www.geocities.com/Area51/7689/zman1.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD>ZDOC Installation&nbsp;
+<BR>----------------------&nbsp;
+
+<P>Download the file zdoc?.zip from this page for the version you would
+like to install. Use PKUNZIP(tm) or an equivalent utility that can read
+ZIP files. Then&nbsp; unzip the downloaded file. Source code files (in
+c) are included as are header files (.h) as well as&nbsp; text files. Read
+through the following files :-&nbsp;
+<BR>ZDOC_ERR.TXT : Latest error reports for the version downloaded.&nbsp;
+<BR>ZDOC_TECH.TXT : Latest non-technical explanations for the errors and
+possible fixes.&nbsp;
+<BR>GPL.TXT : The GNU General Public License. You must agree to this license
+before using or modifying ZDOC, or reading the included source code.&nbsp;
+<BR>ZDOC.TXT : The latest notes for your version.&nbsp;
+
+<P>There is also a file called ZDOC.PRC which is the program. Use the install
+tool and hotsync with your PalmPilot(tm) to install ZDOC. After installation
+the icon shown at the left hand side will be visible. Tapping on the icon
+will launch ZDOC.&nbsp;</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD><IMG SRC="http://www.geocities.com/Area51/7689/zman2.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>Loading files&nbsp;
+<BR>---------------&nbsp;
+
+<P>Files can be loaded by selecting the filename from the drop down list
+at the top and clicking on the Open button.Text can be selected and the
+first record of the file scrolled through by simply touching the pen and
+sliding it down. Note the small arrow on the top right hand side of the
+screen, which shows that ZDOC is free to recieve input. If it changes into
+a star, it indicates ZDOC is usually processing something. You can copy/paste
+text to/from the clipboard on ZDOC Versions 5.0.0b and above. You can also
+scroll through the text one line at a time by using the hardware up/down
+buttons on the case
+<BR>(Versions 5.0.0b or later)</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD ALIGN=LEFT VALIGN=TOP><IMG SRC="http://www.geocities.com/Area51/7689/zman3.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD>The menu system is a simple single drop down menu. ZDOC releases above
+(and including) 5.0.0b no longer have a simple (and single) drop down menu.
+All of&nbsp; the new menu options are partitioned into several menus, conforming
+to the PalmOS UI better.</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD><IMG SRC="http://www.geocities.com/Area51/7689/zman4.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>Clicking on Save in a compressed file results
+in a brief wait. Note the * icon at the top right hand corner indicating
+ZDOC is busy compressing and saving the 4K of compressed record. On changing
+back to the arrow, ZDOC is free for user input.</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD><IMG SRC="http://www.geocities.com/Area51/7689/zman5.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>Scrolling through the entire database 4K at a
+time requires the use of the up&nbsp;
+<BR>and down button arrows which jump through the DOC database in 4K chunks.</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD><IMG SRC="http://www.geocities.com/Area51/7689/zman6.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>The About button results in a small message dialog
+with the usual. (:-)</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD><IMG SRC="http://www.geocities.com/Area51/7689/zman7.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>Hitting serial recieve requires you to have an
+open database with a record loaded (which can be blank if you create a
+new record by hitting the New record menu option. It then displays a static
+screen until it times out or until a 4K chunk of text has been transmitted
+to the pilot (9600,N81,no flow control). Simply open your favourite terminal
+program, set it to 9600 N81 and paste the 4K into the com port the pilot
+is connected to. If its less than 4K press enter and keep it pressed until
+the pilot's * symbol changes to an arrow and the symbol following the RECV
+9600 sign changes (both should occur virtually imultaneously). There is
+no need to save..the record is already saved.</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD><IMG SRC="http://www.geocities.com/Area51/7689/zman8.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>Transmitting requires you to have no open DOC
+files. Simply select the DOC file to transmit from the list (same as the
+open button selection) and click transmit. It will blast all the records
+(i.e. the whole file) in normal ascii text out the com port at 9600bps.
+It doesnt matter if the file is compressed/encrypted or normal. It converts
+everything to standard ASCII and bursts it out. Put a few CR's at the end
+of your file (last record) and set CR translation to CR-LF on the desktop
+terminal program. This is due to picky buffers and sometimes picky terminal
+progs.</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD><IMG SRC="http://www.geocities.com/Area51/7689/zman9.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>Creating a new DOC database is easy. Punch the
+New Database menu item and a small form will popup with the fields to fill
+in. Enter the name of the new DB, select compressed if you want it compressed,
+select encrypt if you want it encrypted and click done. The DB is created
+instantly. Be aware that it may not show up in the main list immediately.
+Simply open a random DB and select close from the menu which reloads the
+list (when it should show up). Alternatively, close and reload the program
+(Click on calculator or some other app, then go to apps and select ZDOC
+in PalmOS 2.x or just click on application and then click on the ZDOC icon
+in OS 3.x). For encrypted DBs, type in the password before saving records
+(Use the password option on the menu to enter it). Passwords will be maintained
+for the remainder of the session. Note that your password should be 8 characters...no
+more or less. If it is less, fill the remainder with spaces. Note that
+you can encrypt files with different passwords for each record, so one
+file can have more than one password. Handy for restricting some information
+to some people and different information to another class of people while
+distributing the same file to everyone equally. Note also that the algorithm
+can be cracked with moderate programming skill. Since you have the source
+code, you can change the algorithm to your own, though.</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD><IMG SRC="http://www.geocities.com/Area51/7689/zman10.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>This shows the drop down list of databases. It
+can hold upto a maximum of 20 unique database names. (if anyone has more
+than 20 let me know and i'll extend it...no big deal)</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD><IMG SRC="http://www.geocities.com/Area51/7689/zman11.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>Showing the same thing in AportisDOC. Note the
+fact that the DOC file created by ZDOC shows up too (showing that ZDOC
+created DBs are fully compatible with aportis)</TD>
+</TR>
+
+<TR ALIGN=LEFT VALIGN=TOP>
+<TD><IMG SRC="http://www.geocities.com/Area51/7689/zman12.jpg" NOSAVE HEIGHT=300 WIDTH=192></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>The edited and saved compressed DOC database
+with the editing changes clearly visible, loaded into AportisDOC.</TD>
+</TR>
+</TABLE></CENTER>
+
+<HR WIDTH="100%">
+<BR>ZDOC Acknowledgements list :-
+<BR>GPLised COMPRESS/UNCOMPRESS CODE -- rob@io.com
+<BR>BETA TESTING (PPro) -- paulmah@cyberway.com.sg
+
+<P>ZDOC do fast list :-
+<BR>&lt;Stuff i gotta work on ASAP>
+<BR>Remove the error handling code from unimplemented functions.&nbsp;
+-- paulmah@cyberway.com.sg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;--done.
+<BR>Reduce the time of repeat for the file information to 0.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;--done.
+
+<P>ZDOC Wish List :-
+<BR>&lt;Stuff i'll get around to doing sooner or later>
+<BR>Add multiple opening of files from the open box without the need to
+<BR>close and reload the entire program.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;--done.
+<BR>Add scrolling one line at a time via the palmpilots hardware buttons.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;--done
+<BR>Add copy/paste facilities.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;--done
+<BR>&lt;-EOF->
+<BR>&nbsp;
+<CENTER><IMG SRC="http://www.geocities.com/cgi-bin/counter" NOSAVE HEIGHT=20 WIDTH=60></CENTER>
+
+
+<P>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+
+</BODY>
+</HTML>

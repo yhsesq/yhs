@@ -1,0 +1,14 @@
+rm pda.tgz
+cp /dev/MAKEDEV /backup/dev/MAKEDEV
+cp /usr/src/linux/drivers/block/pda.c /backup/usr/src/linux/drivers/block/pda.c
+cp /usr/src/linux/include/linux/pda.h /backup/usr/src/linux/include/linux/pda.h
+cp /usr/src/linux/drivers/block/Config.in /backup/usr/src/linux/drivers/block/Config.in
+cp /usr/src/linux/drivers/block/Makefile /backup/usr/src/linux/drivers/block/Makefile
+cp /usr/src/linux/include/linux/blk.h /backup/usr/src/linux/include/linux/blk.h
+cp /usr/src/linux/include/linux/major.h /backup/usr/src/linux/include/linux/major.h
+cp /usr/src/linux/drivers/block/ll_rw_blk.c /backup/usr/src/linux/drivers/block/ll_rw_blk.c
+tar cvf pda.tar *
+gzip -v -f -9 pda.tar
+cp pda.tar.gz pda.tgz
+rm pda.tar.gz
+

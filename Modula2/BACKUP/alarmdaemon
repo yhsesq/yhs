@@ -1,0 +1,28 @@
+echo "\n"
+echo "AlarmDaemon ... Launched.."
+echo "Alarm will be engaged in $1 minutes..."
+launchtime="$1"
+set "$1" `date '+%H %M'`
+curmin=`expr \( $2 \* 60 \) + $3`
+until [ `expr $launchtime - $curmin` -gt 6 ]
+do
+	set "$1" `date '+%H %M'`
+	curmin=`expr \( $2 \* 60 \) + $3`
+	sleep 60
+done
+echo "\n"
+echo "WARNING : Alarm is set to ring in [5] minutes."
+echo "\n"
+sleep 120
+echo "\n"
+echo "WARNING : Alarm is set to ring in [3] minutes."
+echo "\n"
+sleep 120
+echo "\n"
+echo "WARNING : Alarm is set to ring in [1] minute."
+echo "\n"
+sleep 60
+echo "\n"
+echo "  ALARM - **** TIME LIMIT EXPIRED **** !!!! "
+exit 0
+

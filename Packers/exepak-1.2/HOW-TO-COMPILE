@@ -1,0 +1,47 @@
+Update 9/8/99
+-------------
+
+
+Step 1:
+Type ./makeall and wait for it to finish.
+
+thats it.
+
+
+Old compile procedure :
+
+EXEPAK can't be simply compiled by typing 'make.'  There are three steps
+which are required:
+
+Step 1: compiling the LZO compression library
+
+    Change into the lzo-1.01 directory and type 'configure' and then 'make.'
+
+Step 2: compiling the EXEPAK self-extracting stub
+
+    First, type 'make' to build the stub.  You will get an executable called
+    'exepak_stub'  Look at the size of this executable.  Edit stubsize.h
+    and set EXEPAK_STUBSIZE to equal the file size in bytes of exepak_stub.
+    Then type 'make clean' and 'make' again to re-build exepak_stub with
+    the correct stubsize.  Then type 'make stubencode' to encode the stub
+    into a file called __stub.h which will be included into the exepak
+    main executable.
+
+Step 3: compiling the exepak main executable
+
+    Change into the directory called 'src' and type 'make.'  Try it out
+    on some files to make sure it works.
+
+After you have built the main exepak binary, you don't need to keep any of
+the other files around for it to work properly.
+
+Note to Linux rootdisk makers: EXEPAK may be extremely useful in helping the
+creators of Linux distributions pack more useful utilities onto rootdisks.
+However, if you use exepak for a rootdisk, be sure the exepak you use has
+it's stub linked against whatever version of libc you use on the rootdisk
+if you use some kind of special libc.  Many rootdisks use 'lite' versions
+of libc that take up less space but are not compatible with the normal
+version of libc.  If you use the normal libc, don't worry about it.
+Also be sure your rootdisk creates a /tmp directory big enough somewhere
+(like in another ramdisk) and mounts /proc during bootup.
+

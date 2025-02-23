@@ -1,0 +1,11 @@
+cat Monopoly.mod
+cat Square.def
+cat Square.mod
+cat Board.def
+cat Board.mod
+cat Game.def
+cat Game.mod
+cat Player.def
+cat Player.mod
+cat Monopoly.dat
+

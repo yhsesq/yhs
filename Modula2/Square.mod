@@ -1,0 +1,3 @@
+IMPLEMENTATION MODULE Square;
+
+END Square.

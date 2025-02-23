@@ -1,0 +1,22 @@
+DEFINITION MODULE Board;
+
+IMPORT Square;
+IMPORT Player;
+
+TYPE
+	BoardRec = RECORD
+		squares : ARRAY [1..24] OF Square.SquareType;
+        	position : ARRAY [Player.Player1..Player.Player2] OF INTEGER;
+	END;(*BoardRec*)
+
+PROCEDURE Read(VAR Squares : BoardRec);
+(*Input : None)
+**Output: All the squares
+**Modifies: Squares*)
+
+PROCEDURE Print(VAR Squares : BoardRec);
+(*Input: Squares
+**Output: None
+**Modifies: Displays all the squares*)
+
+END Board.

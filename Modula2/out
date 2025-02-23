@@ -1,0 +1,282 @@
+Script started on Sun Apr 21 18:21:24 1996
+scriptss$ cat Stack.mod
+IMPLEMENTATION MODULE Stack;
+(* operates a stack; a Last-In-First-Out data structure*)
+FROM InOut IMPORT Write, WriteLn;
+FROM Storage IMPORT ALLOCATE, DEALLOCATE;
+TYPE      
+	StackType = POINTER TO StackRecord;
+	StackRecord  =	RECORD
+          			stackChar : CHAR;
+          			next : StackType
+     			END; (*StackRecord*)
+
+PROCEDURE CreateStack (VAR top :StackType);
+BEGIN
+	top := NIL
+END CreateStack;
+
+PROCEDURE IsEmpty (top : StackType): BOOLEAN;
+BEGIN
+	IF top=NIL THEN
+		RETURN TRUE
+	ELSE
+		RETURN FALSE
+	END
+END IsEmpty;
+
+PROCEDURE Push (VAR top :StackType; inChar : CHAR);
+(* add an item to the top of the stack *)
+VAR temp: StackType;
+BEGIN
+	ALLOCATE(temp, SIZE(StackRecord));
+	WITH temp^ DO
+		stackChar:=inChar;
+		next:=top
+	END; (*WITH*)
+	top:= temp
+END Push;
+
+PROCEDURE Pop (VAR top : StackType; VAR outChar : CHAR);
+(* remove an Item from the top of the stack*)
+VAR temp : StackType;
+BEGIN
+	IF NOT IsEmpty(top) THEN
+		temp := top;
+		WITH temp^ DO
+			outChar:= stackChar;
+			top := next
+		END; (*WITH*)
+		DEALLOCATE(temp,SIZE(StackRecord))
+	END (*IF*)
+END Pop;
+
+PROCEDURE DisposeStack(VAR top : StackType);
+(*remove all items from the stack*)
+VAR outChar : CHAR;
+BEGIN
+	WHILE (NOT IsEmpty(top)) DO
+		Pop(top,outChar)
+	END (*WHILE*)
+END DisposeStack;
+
+PROCEDURE DisplayStack(top : StackType);
+VAR
+	outChar : CHAR;
+BEGIN
+	IF NOT IsEmpty(top) THEN
+		Pop(top,outChar);
+		Write(outChar);
+		WriteLn;
+		DisplayStack(top^.next)
+	END (*IF*)
+END DisplayStack;
+
+END Stack.
+scriptss$ cat Stack.def
+DEFINITION MODULE Stack;
+(* operates a stack; a Last-In-First-Out data structure*)
+
+TYPE
+	StackType;  (* Opaque type *)
+
+	PROCEDURE CreateStack (VAR top :StackType);
+
+	PROCEDURE IsEmpty (top : StackType): BOOLEAN;
+
+	PROCEDURE Push (VAR top :StackType; inChar : CHAR);
+
+	PROCEDURE Pop (VAR top : StackType; VAR outChar : CHAR);
+
+	PROCEDURE DisposeStack(VAR top : StackType);
+
+	PROCEDURE DisplayStack(top : StackType);
+
+END Stack.
+scriptss$ cat StringStuff.mod
+IMPLEMENTATION MODULE StringStuff;
+
+	PROCEDURE StringLen(s:ARRAY OF CHAR):CARDINAL;
+	CONST
+		NULL=0C;
+	VAR
+		index:CARDINAL;
+	BEGIN
+		index:=0;
+		WHILE (index<=HIGH(s)) AND (s[index]<>NULL) DO
+			INC(index)
+		END;  (*WHILE*)
+		RETURN index
+	END StringLen;
+
+PROCEDURE StringCopy(	orig:ARRAY OF CHAR; 
+			VAR copy:ARRAY OF CHAR;
+			VAR success:BOOLEAN);
+CONST
+	NULL=0C;
+VAR
+	index:CARDINAL;
+BEGIN
+	index:=0;
+	IF StringLen(copy)<StringLen(orig) THEN 
+		success:= FALSE
+	ELSE
+		WHILE (index<StringLen(orig)) DO
+			copy[index]:=orig[index];
+			INC(index);
+		END;  (*WHILE*)
+		copy[index]:=NULL;
+		success:=TRUE
+	END (*IF*)
+END StringCopy;
+
+
+PROCEDURE StringCompare(s1,s2:ARRAY OF CHAR):Result;
+CONST
+	NULL=0C;
+VAR
+	ch1,ch2:CHAR;
+	index:CARDINAL;
+BEGIN
+	index:=0;
+	LOOP
+		IF index>HIGH(s1) THEN
+			ch1:=NULL
+		ELSE
+			ch1:=s1[index]
+		END;
+		IF index>HIGH(s2) THEN
+			ch2:=NULL			
+		ELSE
+			ch2:=s2[index]
+		END;
+		IF ch1<ch2 THEN
+			RETURN less
+		ELSIF ch1>ch2 THEN
+			RETURN greater
+		ELSIF (ch1=ch2) AND (ch1=NULL) THEN
+			RETURN same
+		END;
+		INC(index)
+	END (*LOOP*)	
+END StringCompare;
+
+END StringStuff.
+scriptss$ cat StringStuff.def
+DEFINITION MODULE StringStuff;
+
+TYPE
+	Result=(same,greater,less);
+	
+	PROCEDURE StringLen(s:ARRAY OF CHAR):CARDINAL;
+	(*Returns the length of the string s*)
+
+	PROCEDURE StringCopy(orig:ARRAY OF CHAR; 
+				VAR copy:ARRAY OF CHAR;
+				VAR success:BOOLEAN);
+	(*Copies a string from orig to copy*)
+
+	PROCEDURE StringCompare(s1,s2:ARRAY OF CHAR):Result;
+	(*Compares s1 and s2 character by character until
+	**one is found to be less than the other or they are
+	**found to be the same*)
+
+END StringStuff.
+scriptss$ cat Palindrome.mod
+MODULE Palindrome;
+
+(* Palindrome  ------- Tutorial Excercise   XIII*)
+(* Uses Stack and StringStuff to run Palindrome *)
+(* Author : Yohann H. Sulaiman                  *)
+(* Class: 101CS Programming Methodology         *)
+(* Compiler : Gardens Point / Modula 2 - gpm    *)
+
+FROM InOut IMPORT WriteString,WriteInt, WriteLn, Read, EOL, Write, ReadString;
+IMPORT Stack;
+IMPORT StringStuff;
+
+CONST
+	NULL=0C;
+
+VAR
+stackTOP : Stack.StackType;
+string1 : ARRAY [1..255] OF CHAR; (* normal string *)
+string2 : ARRAY [1..255] OF CHAR; (* reversed string *)
+counter : INTEGER; (* up counter *)
+dcounter : INTEGER; (* down counter *)
+
+
+PROCEDURE LoadStack (VAR stackTOP : Stack.StackType);
+VAR
+inchar : CHAR;
+
+BEGIN
+	counter := 1;
+	Read(inchar);
+	string1[counter] := inchar;
+	WHILE (inchar <> EOL) DO
+		Stack.Push(stackTOP,inchar);
+		Read (inchar);
+		INC(counter);
+		string1[counter] := inchar;
+	END;  (*WHILE*)
+	string1[counter]:=string2[counter];
+END LoadStack;
+
+PROCEDURE EmptyStack(VAR stackTOP : Stack.StackType);
+
+VAR 
+outchar : CHAR;
+
+BEGIN
+	dcounter := 1;
+	WHILE (NOT Stack.IsEmpty(stackTOP)) DO		
+		Stack.Pop(stackTOP,outchar);
+		string2[dcounter]:=outchar;
+		INC(dcounter);
+		END; (*WHILE*)
+END EmptyStack;
+
+PROCEDURE WriteResult(strings1,strings2 : ARRAY OF CHAR);
+BEGIN
+	WriteLn;
+	IF (StringStuff.StringCompare(strings1,strings2)=StringStuff.same) THEN WriteString(" String is a Palindrome ...");
+	ELSE WriteString(" String is NOT a Palindrome ...");
+	END(*IF*)
+END WriteResult;
+
+(* Main Program Begin... *)
+BEGIN
+
+	WriteLn;
+	WriteString("Palindrome program : ");
+	WriteLn;WriteLn;
+	WriteString(" Enter Palindrome : ");
+	Stack.CreateStack(stackTOP);
+	LoadStack(stackTOP);
+	EmptyStack(stackTOP);
+	WriteResult(string1,string2);
+
+END Palindrome.
+
+ 
+scriptss$ gpmake Palindrome
+scriptss$ Palindrome
+
+Palindrome program : 
+
+ Enter Palindrome : abba
+
+ String is a Palindrome ...
+scriptss$ 
+scriptss$ Palindrome
+
+Palindrome program : 
+
+ Enter Palindrome : abbb
+
+ String is NOT a Palindrome ...
+scriptss$ ^D
+script done on Sun Apr 21 18:22:17 1996
+
+script done on Sun Apr 21 18:22:17 1996

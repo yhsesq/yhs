@@ -1,0 +1,364 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (Win95; I) [Netscape]">
+   <META NAME="Author" CONTENT="Zurk Technology Inc.">
+   <TITLE>Z-DOC/PalmPilot</TITLE>
+</HEAD>
+<BODY>
+<MAP name="PalmPilot WebRing"><AREA shape="rect" coords="73, 1, 162, 40"
+href="http://www.webring.org/cgi-bin/webring?home&ring=geoff" target=_top><AREA shape="rect" coords="161, 1, 202, 20"
+href="http://www.webring.org/cgi-bin/webring?home&ring=geoff" target=_top><AREA shape="rect" coords="162, 20, 201, 41"
+href="http://www.webring.org/cgi-bin/webring?ring=geoff;list" target=_top><AREA shape="rect" coords="37, 1, 73, 41"
+href="http://www.webring.org/cgi-bin/webring?ring=geoff;id=372;next" target=_top><AREA shape="rect" coords="1, 1, 37, 41"
+href="http://www.webring.org/cgi-bin/webring?ring=geoff;id=372;prev" target=_top><AREA shape="rect" coords="202, 1, 247, 41"
+href="http://www.webring.org/cgi-bin/webring?ring=geoff;id=372;next5" target=_top><AREA shape="rect" coords="247, 1, 291, 41"
+href="http://www.webring.org/cgi-bin/webring?ring=geoff;random" target=_top></MAP>
+<CENTER><IMG SRC="http://www.geocities.com/Area51/7689/zdoc.jpg" NOSAVE HEIGHT=500 WIDTH=660></CENTER>
+
+<CENTER><B><FONT COLOR="#3333FF"><FONT SIZE=+4>Z-DOC / PalmPilot</FONT></FONT></B></CENTER>
+ZDOC is a GPLised industry standard DOC file format viewer/editor with
+a few extras. It is released only under the terms of the <A HREF="http://www.gnu.org">GNU</A>
+GPL. Please read the files GPL.TXT and ZDOC.TXT for a full description
+and terms of the GPL as well as an introduction to ZDOC.
+
+<P><TT>The ZFile initiative is now starting once sufficient hardware is
+available. For more details click <A HREF="http://www.geocities.com/Area51/7689/zfile.html">here</A>.</TT>
+
+<P>You can download ZDOC from the ZDOC Programmers page by <A HREF="http://www.geocities.com/Area51/7689/pilot.html">clicking&nbsp;<A HREF="http://www.geocities.com/Area51/7689/pilot.html"><IMG SRC="http://www.geocities.com/Area51/7689/zprog.gif" NOSAVE HEIGHT=51 WIDTH=167 ALIGN=CENTER></A></A>.
+
+<P>You can read the ZDOC manual from the ZDOC Manual page by <A HREF="http://www.geocities.com/Area51/7689/zman.htm">clicking&nbsp;<A HREF="http://www.geocities.com/Area51/7689/zman.htm"><IMG SRC="http://www.geocities.com/Area51/7689/zman.gif" NOSAVE HEIGHT=51 WIDTH=167 ALIGN=CENTER></A></A>.
+
+<P>
+<HR WIDTH="100%">
+<CENTER><IMG SRC="http://www.palmcentral.com/imgs/ppwebring.gif" ALT="PalmPilot WebRing" BORDER=0 usemap="#PalmPilot WebRing" HEIGHT=41 WIDTH=292></CENTER>
+
+<CENTER>
+<HR WIDTH="100%"></CENTER>
+
+
+<P>ZDOC FAQ :-
+
+<P>This is a list of frequently asked questions about ZDOC. It should cover
+most queries, but mail me if you have any others. RTFM before mailing me
+-- i dont have a lot of time to answer a billion queries. They arent in
+any specific order -- just dumped in when i recv queries.
+
+<P>[0.0] How fast do you release ZDOC versions ?
+
+<P>[0.0] Varies -- depending on my mood and how much time I have. It usually
+takes a week between version upgrades when I have access to a machine for
+a minimum of 8hrs/day and no other work. This will slow down or stop to
+one version every month or so when i cross a decent threshold of features.
+
+<P>[0.1] You dont have access to a machine ?
+
+<P>[0.1] I dont have any machine with the exception of my PalmPro. No PC/Unix
+machine. I get access thru public terminals where i've installed the GNU
+SDK. I dont have a great deal of cash to afford a decent laptop.
+
+<P>[0.2] How stable is ZDOC ?
+
+<P>[0.2] As stable as I could make it. It doesnt crash under the 2.0 debug
+ROM which is supposed to include lots of checks. As I spent a year programming
+on a Irix platform i've dealt with a lot x/motif memory leaks. As a result
+my memory handling routines should be stabler than most other ppls. I cant
+guarantee anything though. Its not as thoroughly tested as some of my other
+software and you use it at your own risk. As a general rule of thumb try
+to open files which are less than 250K and do not open them unless you
+have at least 2 times the file length in free RAM. i.e. if youre editing
+a 100K file make sure you have 200K free ram in your pilot. (Check it via
+the memory utility). This is normal for any DOC app, not just ZDOC. DOC
+apps consume RAM faster than any other apps. [[Note that
+<BR>this does not apply to betas/alphas/test releases..theyre as buggy
+as hell.]]
+
+<P>[0.3] What about bugs ?
+
+<P>[0.3] What about them ? (heh.) I've weeded out most of em. If you find
+any try and fix it yourself (the code is GPLised) and mail the thing to
+me with all possible details of it -- i'll whack it up soon, or modify/improve
+it to fit in all versions of ZDOC. If i release a special test version
+then just mail me the bug and i'll try and fix it immediately. this applies
+for test versions only [ e.g. 5.x.x c ] all versions with a c extension
+are test releases.
+
+<P>[0.4] Is there a seperate programmers page for ZDOC ?
+
+<P>[0.4] Yup. Try this <A HREF="http://www.geocities.com/Area51/7689/pilot.html">one</A>.
+
+<P>[0.5] I've put a really groovy must have thingy into ZDOC. How do i
+release it ?
+
+<P>[0.5] Mail it to me with express instructions including where it fits
+and what it does. Mail me the version of ZDOC used (must be the most release
+version i.e. no alpha/beta) and i'll put it up with your name (if you would
+like your name there).
+
+<P>[0.6] Can i send you encrypted mail ? Your PGP key is on your site.
+
+<P>[0.6] NO. Not regarding ZDOC. I allow/use encryption for confidential
+mails only. Mailing me encrypted junk gets you onto my kill filter ASAP.
+
+<P>[0.7] I lost my data !! ZDOC wiped my system !! it crashed..etc..etc.
+
+<P>[0.7] Restore from hotsync. mail me OS version, what you did, what files
+you worked on, what files you had loaded and what versions they were, all
+file/database sizes. I'll try and work on it to remove the bug, but no
+guarantees are made. Youre using this program at your own risk. I *do*
+have *some* motivation to remove total loss bugs (if any occur -- ive not
+seen it happen yet) since i use ZDOC extensively myself. (and no.. i dont
+take the advice from [0.2] seriously either. i routinely use it in low
+memory situations, but ive never lost anything uptil now -- on the other
+hand i DO keep hotsyncing at every oppurtunity)
+
+<P>[0.8] Does ZDOC work with/compatible with any other DOC readers/writers
+?
+
+<P>[0.8] I've always kept a freeware DOC reader on my system. Usually its
+Aportis DOC Mobile edition or the freeware DOC reader from Aportis. They
+cause no problems and ZDOC can handle bookmarks easily (i.e. right now
+it just ignores them).
+<BR>&nbsp;
+<BR>[0.9] Why dyou keep a freeware reader on your system ?
+
+<P>[0.9] Just in case (heh). Acutally i prefer to work with readonly mode
+readers rather than a reader/writer such as ZDOC for browsing files. Its
+safer. For editing files I just use ZDOC. Note that ZDOC Ver2.x or below
+open files in ReadOnly mode and are as safe (or safer) than Aportis readers
+since Aportis readers add bookmarks which means they write to the file.
+ZDOC 2.x or below DO NOT write to the file. After Ver2.x it does...since
+i use Ver3.x and above this doesnt apply to me. Note that Ver4.0.5a and
+beyond now write to the file only when you press the save command...otherwise
+they open the file in readonly mode.
+
+<P>[1.0] How stable is the code ?
+
+<P>[1.0] Very. ive not seriously broken it til now. It uses PalmOS 2.x
+API calls only to allocate/deallocate memory and no funny stuff. It should
+be compatible with PalmOS 3.x too..although i dont have a palm iii so i
+guess i'll wait til i find someone who tries it on one.
+
+<P>[1.1] Are you registered with 3COM ?
+
+<P>[1.1] I'll try to get ZDOC PalmOS certified..no guarantees on this.
+I've registered ZDOC's AppId with 3COM -- it's ZURK. I've also Gremlin
+tested each version of ZDOC and ensured that it runs on both 2.0 and 3.0
+debug ROMs. Note that the test versions of ZDOC are not gremlin tested
+fully..usually they are put through 1000 or so cycles and not the 1-2 million
+recommended. I'LL ONLY RELEASE FULL VERSIONS WHEN THEY PASS THROUGH 1 MILLION
+CYCLES.
+
+<P>[1.2] Im a newbie programmer...i wanna learn ! Cant find anything --
+help !
+
+<P>[1.2] Mail me -- i usually help if im not too busy. it takes a while
+but i'll get around to replying. Note that i only help ppl who work on
+GPLed code and use GCC. If you use any other development engine/develop
+commercial/shareware code -- forget it. Mail me your website, the location
+of GPLised code that you have contributed to the general public and any
+apps (with code). If i like what i see and i think you have potential i'll
+reply. Very newbie newbies who havent done anything but are prepared to
+show intent to develop GPLised apps are also welcome. I must have your
+website tho, and you must be using GCC.
+
+<P>[1.3] How come you havent put your real name on your site ?
+
+<P>[1.3] I believe in my freedom to remain anonymous. That and it makes
+me a lot tougher to sue. As such i dont put any real names/addresses up.
+I guard my privacy VERY carefully. And no, i wont give it to you if you
+ask me either. You may email me of course. My email address is functional
+(zurk@geocities.com).
+
+<P>[1.4] Have you written/going to write any other pilot software besides
+ZDOC ?
+
+<P>[1.4] dunno. will see.
+
+<P>[1.5] I want ##spiffy feature #999## in ZDOC. How do i do that ?
+
+<P>[1.5] Mail me your specs for #999 and i'll include it if i think it
+interesting. otherwise i'll delete the mail. get off your lazy backside
+and do it yourself before mailiing me...unless youre a total newbie.
+
+<P>[1.6] Why does ZDOC work on only 4K at a time ?
+
+<P>[1.6] Until i feel a HELLUVA lot more comfortable working with big chunks
+of data on a palmpilot, thats the way it stays. 4K is nice neat and simple.
+And theres no problem about the OS suddenly freaking out due to too much
+RAM consumption. Anyone want to patch ZDOC to work with over 4K at a time
+? mail me
+<BR>and try it out..if i feel its stable ill put it into the full versions.
+
+<P>[1.7] Does it work with PalmOS 1.x ?
+
+<P>[1.7] NO. thats been confirmed. Check the mail below :-
+
+<P>Here's the scoop,&nbsp; I just downloaded version 4.0.5a (which according
+to you is the
+<BR>new version) and tried it in CoPilot (I've had to remove the RAM file
+everytime
+<BR>following a crash anyway so I was already doing that).&nbsp; It caused
+an application error
+<BR>when I clicked on the open button and closed CoPilot.&nbsp; I went
+ahead and
+<BR>downloaded it to my pilot and it still hangs on the info window when
+the open button
+<BR>is clicked.&nbsp; However, this version does not generate the MemoryMgr.c
+invalid handle
+<BR>error so I was able to remove it without the hard reset :)&nbsp; (BTW
+when I mentioned
+<BR>that in CoPilot it was locking up, I meant it was generating an application
+error and
+<BR>closing out).
+
+<P>Jonathan Beach
+<BR>CMHC Systems
+<BR>Systems Support Engineer
+
+<P>[1.8] DOC files...what are they ? where can i get info for them from
+?
+
+<P>[1.8] Although Aportis has not formally released the DOC specification
+to the general public, heres a mail that might help :-
+<BR>The database layout is pretty simple:
+
+<P>&nbsp; - record 0 is a header which contains the following:
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - a short int (2 bytes) containing the
+file version
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1 = uncompressed records,
+2 = compressed records)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - a short int containing something unknown
+and unimportant
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - a long int (4 bytes) giving the total
+*uncompressed* length of
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the text
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - a short int giving the count of text
+records
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - a short int giving the *uncompressed*
+size of each text record
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (default 4096)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - a short int containing something unknown
+and unimportant
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; readers may add a bit more to this record
+the first time they
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; open the file, but only the above needs
+to be there when it is
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; created.
+
+<P>&nbsp; - records 1 - n (where n is the number of text records) each
+contain
+<BR>&nbsp;&nbsp;&nbsp; a block of text of a fixed size, normally 4096 bytes.&nbsp;
+That is
+<BR>&nbsp;&nbsp;&nbsp; 4096 bytes *before* compression -- the actual size
+of the record
+<BR>&nbsp;&nbsp;&nbsp; will be somewhat less, because it contains the compressed
+data.
+<BR>&nbsp;&nbsp;&nbsp; However, since the uncompressed size of each record
+is known, it
+<BR>&nbsp;&nbsp;&nbsp; is easy to seek to any particular point in the file
+and uncompress
+<BR>&nbsp;&nbsp;&nbsp; one record at a time using a fixed-size buffer.
+
+<P>&nbsp; - records n+1 to the end are bookmarks.&nbsp; Each one contains
+a 16-byte
+<BR>&nbsp;&nbsp;&nbsp; string (null terminated, but always takes the full
+16 byte area)
+<BR>&nbsp;&nbsp;&nbsp; followed by a long int giving the seek position
+of the bookmark.
+
+<P>The compression algorithm is too complicated for me to describe here
+<BR>(as such things go it's rather simple, but it is still easier to show
+<BR>with code :) so your best bet is to look at the code.
+
+<P>> I managed to get some make doc samples for unix and could
+<BR>> probably reverse engineer them, but its irritating when the DOC standard
+<BR>> is supposed to be an "open industry wide standard" (according to
+the
+<BR>> author of PilotDOC). I did find a few msgs which commented on the
+<BR>> Micro$oft style takeover of pilotdoc by aportis but nothing else.
+<BR>> Any help would be appreciated as i plan to create a few DOC apps
+over the
+<BR>> next month or so (GPLised of course).
+
+<P>If you are working with Unix, I urge you to check out my package
+<BR>called "PalmPython".&nbsp; I don't know if you ever use Python, but
+even if
+<BR>you don't you ought to give it a look because I did some pretty
+<BR>extensive Doc-making stuff.&nbsp; (I also have a simple XML-to-Doc
+<BR>converter that uses it.)&nbsp; Python is fairly easy to read even if
+you've
+<BR>never used it before, provided you understand basic OOP etc.
+
+<P>In particular, PalmPython contains a snippet of C code to do Doc
+<BR>compression and decompression, which you can probably use elsewhere.
+<BR>(It's two functions and a Python-API wrapper.)&nbsp; If you actually
+*use*
+<BR>PalmPython, it contains code for reading and writing Docs as file-like
+<BR>streams, complete with automatic compression and reader-style
+<BR>bookmark-setting (the latter of which none of the other Doc-makers
+do,
+<BR>even on other platforms).
+
+<P>PalmPython is GPLed, so do with it what you will.&nbsp; (If you actually
+<BR>use it for anything, please let me know, send patches and
+<BR>compatibility reports, etc.)
+
+<P>PalmPython is available at
+<BR>&nbsp;&nbsp; http://www.io.com/~rob/cq/
+<BR>along with its companion XMLDoc. As I said, even if you don't use
+<BR>Python, you might want to read the source and copy bits of _Doc.c.
+<BR>By the way, when you mention creating "a few Doc apps", do you
+<BR>perchance mean a reader?&nbsp; The world desperately needs an open-source
+<BR>Doc reader on the Pilot -- I would do it myself, but I have made so
+<BR>many failed attempts at decent Pilot programming it's not funny, and
+I
+<BR>have thus decided to stick to the desktop side.&nbsp; If you are
+<BR>considering doing one, please take this as a hearty endorsement of
+the
+<BR>idea :-)
+
+<P>--Rob
+
+<P>--
+<BR>Rob Tillotson&nbsp; N9MTB
+
+<P>[1.9] ZDOC crashed/machine reset ! It also left a database called ZRAM
+on my machine..what do i do ?
+
+<P>[1.9] Erase off the ZRAM database. Its a temporary database of no importance.
+Be aware that if ZDOC
+<BR>crashes while saving, and you have a lot of important work that should
+be saved/you have no backup of
+<BR>that work, ZRAM will contain the record which should have been saved.
+ZRAM contains just one record,
+<BR>record 0, with a text version of the field that ZDOC is currently working
+on. It serves as a backup.
+
+<P>[2.0] Whats the tiny symbol displayed on the top right hand corner when
+i save to a compressed file ?
+
+<P>[2.0] Thatrs a replacement for the ugly status messages. A small arrow
+pointing downwards is displayed on
+<BR>the top right hand corner when ZDOC is ready for user input. A small
+star symbol is displayed when it is
+<BR>busy (usually compressing and saving text)..its equivalent to the arrow/hourglass
+figure in windoze.
+
+<P>Note: if anyone doesnt want their mails etc posted up i'll be glad to
+remove em. mail me.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; All copyrights are
+acknowledged.
+<BR>&lt;-EOF->
+<BR>&nbsp;
+<CENTER><IMG SRC="http://www.geocities.com/cgi-bin/counter" ></CENTER>
+
+
+<P>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+
+</BODY>
+</HTML>

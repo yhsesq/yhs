@@ -1,0 +1,51 @@
+Z-DOC [Ver.5.1.0b]
+-----
+
+Z-DOC is released under the terms of the GNU GPL v.2.0 or later.
+Using/unzipping this package indicates acceptance of the terms
+and conditions stated in the GNU General Public Licence. Please
+read GPL.TXT before proceeding with the installation or usage
+of this package. If you do not wish to agree to the terms of
+the GPL please erase this package and terminate its usage.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Files in this package
+---------------------
+zdoc.prc                        - Z-DOC Ver.5.1.0b [Installable application] 
+zdoc.c                          - C source code for ZDOC [Development source]
+zdoc.rcp                        - PilRC development file [ZDOC Interface]
+zdoc.h                          - ZDOC Header file
+ZDOC_ERR.TXT                    - ZDOC Errata/Bug listing
+zdoc.rcb                        - Backup [RCP]
+zdoc.cb                         - Very old Backup [C]
+zdoc.cb1                        - Old Backup [C]
+ZDOC.HTM                        - Webpage text file [ZDOC FAQ page]
+start.bat                       - misc development batch files
+builder.bat                     -/
+DOSPRMPT.PIF                    - Sample development PIF
+z.bat                           - misc development batch files
+e.bat                           -/
+PALMD.C                         - GPLised source code for compression/decompression [RLE - see FAQ]
+ZDOC.TXT                        - This document file
+zdoc.bmp                        - ZDOC icon file
+gpl.txt                         - GNU General Public License v2.0
+PILOT.HTM                       - ZDOC Programmer's page
+zdoc_tech.txt                   - ZDOC simplified errata listing
+pilot.html                      - ZDOC Programmers page backup.
+zman.htm                        - ZDOC online manual
+zdoc.html                       - ZDOC Webpage backup.
+zpatch.c                        - Patch code integrated with 5.0.0b2
+zdoc_readable_source.c          - *OLD* READABLE C source code for ZDOC v.5.0.0a2

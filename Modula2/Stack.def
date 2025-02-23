@@ -1,0 +1,19 @@
+DEFINITION MODULE Stack;
+(* operates a stack; a Last-In-First-Out data structure*)
+
+TYPE
+	StackType;  (* Opaque type *)
+
+	PROCEDURE CreateStack (VAR top :StackType);
+
+	PROCEDURE IsEmpty (top : StackType): BOOLEAN;
+
+	PROCEDURE Push (VAR top :StackType; inChar : CHAR);
+
+	PROCEDURE Pop (VAR top : StackType; VAR outChar : CHAR);
+
+	PROCEDURE DisposeStack(VAR top : StackType);
+
+	PROCEDURE DisplayStack(top : StackType);
+
+END Stack.

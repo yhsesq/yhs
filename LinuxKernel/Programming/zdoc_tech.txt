@@ -1,0 +1,115 @@
+ZDOC Known bugs (non-technical explanations)                              FIX
+--------------------------------------------                              ---
+
+CRASH Invalid memory pointer crash detected when running Gremlins.        [*]
+FIX : UNKNOWN                                                             
+ATTEMPT : FIX applied to handle find button. 
+RESULT : PROBLEM STILL EXISTS
+
+CRASH When loading form for creating new databases on OS 3.0 Debug ROMs
+      Crash with BadFormHandler.
+FIX : UNKNOWN  (OS 3.x specific problem, OS 3.x APIs/Tools unavailable)
+ATTEMPT : CHECK ON OS 2.x
+RESULT : PROBLEM NON-EXISTANT ON OS 2.x. PROGRAM BUILT FOR OS 2.x.
+         THEREFORE CONSIDERED SOLVED.
+UPDATE : FIX found on Palmpilot Developers site.
+FIX : APPLIED
+RESULT : SOLVED. WORKS ON OS 3.x 
+
+CRASH Gremlins detect Overlocking of field handle.                        [*]
+FIX : Attempted to add some unlocking.
+ATTEMPT : FAILED.
+RESULT : Gremlins detect Underlocking of field handle.
+
+CRASH Possible crash observed when writing to newly created               [*]
+      compressed databases. Related to underlocking of field handler
+      problem.
+FIX : Increase the length of field handler.
+ATTEMPT : NONE.
+RESULT : PROBLEM STILL EXISTS.
+
+CORRUPTION Gradual growth observed in ZRAM temporary memory file.
+FIX : Delete file after application exit.
+      Use a single record and delete at every opportunity.
+      [5.0.1b2+] Rewritten field handler. ZRAM no longer exists.
+ATTEMPT : SUCCESS.
+RESULT : OK.
+
+CRASH MemHandler crash on write to unloaded (& empty) field.
+FIX : Fixed the Enable/Disable of fields.
+ATTEMPT : SUCCESS.
+RESULT : OK.
+
+CRASH Crash on 0 length files.                                            [*]
+FIX : PATCHED to ensure no zero length files exist.
+ATTEMPT : PARTIAL.
+RESULT : PROBLEM STILL EXISTS ON FILES CREATED BY OTHER DOC EDITORS.
+
+CRASH Crash on null names in new DOC file creation
+FIX : Detect function added.
+ATTEMPT : SUCCESS
+RESULT : SOLVED.
+
+CRASH Debug crash on load (& up) of write compressed.
+FIX : Attempt to isolate Write handler.
+      Attempt to improve saving code.
+ATTEMPT : SUCCESS.
+RESULT : SOLVED LOAD PROBLEMS. SOLVED UP PROBLEM.
+
+CRASH MemHandler on reopen of opened document on reload.
+FIX : None.
+ATTEMPT : NONE
+RESULT : RESOLVED ITSELF(?)
+
+CRASH Database corruption on write. Garbage in header + Invalid Handler.
+FIX : Attempt to isolate Write handler.
+      Attempt to improve MemHandling(?).
+ATTEMPT : UNKNOWN
+RESULT : RESOLVED ITSELF(?)
+
+CRASH On write attempt for compressed files.
+FIX : Attempt to isolate write handler
+      Improved handler code. << resolved.
+ATTEMPT : SUCCESS
+RESULT : OK
+
+CRASH Attempt to scroll up on Saved record.
+FIX : Attempt to isolate Write handler.
+ATTEMPT : UNKNOWN
+RESULT : RESOLVED ITSELF(?)
+
+NOTES :-
+30/6/98
+Ok..this is your very confused programmer here. After recompiling
+and making a slight change (which didnt do anything when i tried it
+earlier) bugs seemed to mysteriously remove themselves for some reason.
+I dunno why, but hey, is it works who gives a shit. (For all those
+who wonder, yeah, i undid the small change and the bugs never came back..
+not wanting to jinx(?) things i kept it in anyway. wtf.) im too tired to
+think about anything right now so i'll keep the mystery to be resolved
+until later. only one bug is left as of writing this and its evening
+so i'll go back to netquake and hack on it later.
+
+1/7/98
+I've removed the annoying wait which i got too many complaints about anyway.
+Also seem to have solved most bugs. 
+
+2/7/98
+I've fixed the invalid field write by patching it to enable and disable the
+field while it is working. I've also added the annoying wait back(?) but not
+by default. Now you have to select the info button on the menu to get the
+wait back...this being mainly for my personal debugging pleasure..ok..ok..
+i *liked* the wait.
+
+8/7/98
+Some (few) bugs added. All are non fatal and can be cured by resetting (warm)
+..no biggie..i'll get rid of em soon.
+
+22/12/98
+(few) bugs turned out to be quite serious. Repatched the ZDOC field handler.
+Now crashes without loading. im rewriting the field handler to support the
+new string/charptr format.
+
+26/12/98
+Rewritten ZDOC handler. Seems to be stable & works ok. fixed new doc problem.
+-------------------------------------------------------------------------------

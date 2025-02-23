@@ -1,0 +1,15 @@
+Verification script for Sentinel.
+
+This program uses the standard implementation
+code from the RIPEMD-160 function. This code
+is *not* written by me. You must have sentinel
+installed for this to work.
+
+For installation :
+[1] Type make
+[2] Type ./Sverify
+
+This will return the RIPEMD-160 bit checksum of the
+sentinel executable. Store it in a safe place.
+-EOF-
+

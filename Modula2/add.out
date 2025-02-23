@@ -1,0 +1,32 @@
+Word-Counter
+------------
+
+Notes:
+
+The original Word Count program, when tested on the table (test.wc)
+failed to consider hyphened words as single words. i.e sun-day would
+be taken as two words instead of one.
+There were two problems encountered while considering hyphens :-
+1. Hyphens can be used to underline words
+                          ---------
+2. Hyphens only join a single word together - this hyphen cannot 
+be considered to be a word. but this one-can.
+
+Hence, in the modified program, a global variable prevch was added 
+which was a boolean variable. This would be set and reset depending 
+on whether there were two hyphens or one. Hence, this would be 
+considered as one word :
+                             one-word
+
+But this would be considered as two words:
+
+			     two -- words
+
+This approach also solved the problem of underlined words
+since more than one hyphen following the other would cause the word
+to be ignored.
+
+Blank lines, commas etc. were handled perfectly by the program, as
+were the number of characters in the file.
+
+Hence, no further modifications were required.

@@ -1,0 +1,18 @@
+DEFINITION MODULE Square;
+
+IMPORT Player;
+
+TYPE
+	SquareType = RECORD
+		name: ARRAY [0..24] OF CHAR;
+		sqrtype : CHAR;
+		CASE sqrstat : CHAR OF
+			'P' : 	price : INTEGER;
+			 	rent : INTEGER;
+				owned : BOOLEAN;
+				owner : Player.PlayerType;
+			| 'T','W' : amount : INTEGER
+			ELSE
+			END (*CASE*)
+		END; (*SquareType*)
+END Square.

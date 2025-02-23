@@ -1,0 +1,11 @@
+rm -f sentinel.1
+rm -f sentinel.1.bak
+rm -f sentinel.2
+rm -f sentinel.2.bak
+rm -f sentinel.sig.*
+rm -f sentinel.lock
+rm -f sentinel.tmp
+rm -f sentinel.tmpx
+
+
+

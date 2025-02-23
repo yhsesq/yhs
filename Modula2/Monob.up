@@ -1,0 +1,241 @@
+MODULE Monopoly;
+
+(* Monopoly Game  ------- Tutorial Excercise XIb*)
+(* Reads the data file Mono2.dat/Monopoly system*)
+(* Compiler : Gardens Point / Modula 2 - gpm    *)
+ 
+
+FROM InOut IMPORT WriteString, WriteLn, ReadCard, WriteCard, ReadInt, WriteInt, ReadString, Read, OpenInput, CloseInput, Done;
+
+TYPE
+(* 
+SquareClass(Go,Property,ChanceorChest,IncomeTax,Station,Jail,Utility,FreePark,GoToJail);
+*)
+StringArray = ARRAY [0..15] OF CHAR;
+MonopolySquare=RECORD
+	number : CARDINAL;
+	CASE class: CHAR OF
+		'P' : 	pname : ARRAY [0..15] OF CHAR;
+		      	pcolour : ARRAY [0..15] OF CHAR;
+			price,prent,rentwi,rentwii,rentwiii,rentwiv,rentwh,hcost,hotwiv,houses,hotels : ARRAY [0..3] OF CHAR;
+			pownername : ARRAY [0..15] OF CHAR
+	|	'S' : 	sname : ARRAY [0..15] OF CHAR;
+			sprice,srent : ARRAY [0..3] OF CHAR;
+			sownername : ARRAY [0..15] OF CHAR
+	|	'U' : 	uname : ARRAY [0..15] OF CHAR;
+			uprice : ARRAY [0..3] OF CHAR;
+			uownername : ARRAY [0..15] OF CHAR
+	ELSE
+	END; (* CASE *)
+	END (* MonopolySquare *);
+
+SquareArrayType = ARRAY [1..50] OF MonopolySquare;
+
+VAR
+
+sqr : INTEGER;
+class : CHAR;
+Square : SquareArrayType;
+
+PROCEDURE ReadSquare(VAR sqr : INTEGER);
+
+BEGIN
+
+	WriteLn;
+	WriteLn;
+	WriteString("MonoPoly/11b");
+	WriteLn;
+	WriteLn;
+	WriteString("Enter the number of the square :-:");
+	ReadInt(sqr);
+	IF (sqr > 40) THEN sqr:=1;END;
+	WriteLn;
+	WriteLn;
+
+END ReadSquare;
+
+PROCEDURE FindSquare(sqr : INTEGER);
+
+VAR
+
+data : ARRAY [0..100] OF CHAR;
+counter : INTEGER;
+
+BEGIN
+	counter:=0;
+	OpenInput("dat");
+	FOR counter:=1 TO 40 DO
+	
+	ReadString(data);
+	IF (data[0]='G') 
+	THEN 	class:=data[0];
+		Square[counter].number:=counter;
+
+	ELSIF (data[0]='P')
+	THEN 	class:=data[0];
+		Square[counter].number:=counter;
+		ReadString(Square[counter].pname);
+		ReadString(Square[counter].price);
+		ReadString(Square[counter].prent);
+		ReadString(Square[counter].rentwi);
+		ReadString(Square[counter].rentwii);
+		ReadString(Square[counter].rentwiii);
+		ReadString(Square[counter].rentwiv);
+		ReadString(Square[counter].rentwh);
+		ReadString(Square[counter].hcost);
+		ReadString(Square[counter].hotwiv);
+		ReadString(Square[counter].houses);
+		ReadString(Square[counter].hotels);
+		ReadString(Square[counter].pownername);
+	ELSIF (data[0]='C')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+
+	ELSIF (data[0]='I')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+
+	ELSIF (data[0]='S')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+		ReadString(Square[counter].sname);
+		ReadString(Square[counter].sprice);
+		ReadString(Square[counter].srent);
+		ReadString(Square[counter].sownername);
+
+	ELSIF (data[0]='J')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+
+	ELSIF (data[0]='U')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+		ReadString(Square[counter].uname);
+		ReadString(Square[counter].uprice);
+		ReadString(Square[counter].uownername);
+
+	ELSIF (data[0]='F')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+
+	ELSIF (data[0]='T')
+	THEN	class:=data[0];
+		Square[counter].number:=counter;
+
+	ELSE 
+	END;
+	END; (* FOR *)
+	CloseInput;
+
+END FindSquare;
+
+PROCEDURE WriteSquare(sqr : INTEGER);
+VAR
+
+c : INTEGER;
+
+BEGIN
+
+	WriteLn;
+        IF (Square[sqr].class='G')
+        THEN
+		WriteLn;
+                WriteString(" The Square is a GO Square ");
+		WriteLn;
+
+        ELSIF (Square[sqr].class='P')
+        THEN
+                WriteLn;
+                WriteString(Square[sqr].pname);
+                WriteLn;
+                WriteString(Square[sqr].price);
+                WriteLn;
+                WriteString(Square[sqr].prent);
+                WriteLn;
+                WriteString(Square[sqr].rentwi);
+                WriteLn;
+                WriteString(Square[sqr].rentwii);
+                WriteLn;
+                WriteString(Square[sqr].rentwiii);
+                WriteLn;
+                WriteString(Square[sqr].rentwiv);
+                WriteLn;
+                WriteString(Square[sqr].rentwh);
+                WriteLn;
+                WriteString(Square[sqr].hcost);
+                WriteLn;
+                WriteString(Square[sqr].hotwiv);
+                WriteLn;
+		WriteString(Square[sqr].houses);
+                WriteLn;
+                WriteString(Square[sqr].hotels);
+                WriteLn;
+		WriteString(Square[sqr].pownername);
+                WriteLn;
+ 
+	ELSIF (Square[sqr].class='C')
+        THEN
+		WriteLn;
+        	WriteString(" The Square is a Chance/Chest Card Square ");
+		WriteLn;
+
+        ELSIF (Square[sqr].class='I')
+        THEN
+                WriteLn;
+                WriteString(" The Square is a Income Tax Square ");
+                WriteLn;        
+
+	ELSIF (Square[sqr].class='J')
+        THEN
+                WriteLn;
+                WriteString(" The Square is a Jail Square ");
+                WriteLn;        
+
+	ELSIF (Square[sqr].class='F')
+        THEN
+                WriteLn;
+                WriteString(" The Square is a FREE PARKING Square ");
+                WriteLn;
+
+        ELSIF (Square[sqr].class='T')
+        THEN
+                WriteLn;
+                WriteString(" The Square is a GO TO JAIL Square ");
+                WriteLn;
+
+        ELSIF (Square[sqr].class='S')
+        THEN
+                WriteLn;
+                WriteString(Square[sqr].sname);
+                WriteLn;
+                WriteString(Square[sqr].sprice);
+                WriteLn;
+                WriteString(Square[sqr].srent);
+                WriteLn;
+                WriteString(Square[sqr].sownername);
+                WriteLn;
+
+        ELSIF (Square[sqr].class='U')
+        THEN
+                WriteLn;
+                WriteString(Square[sqr].uname);
+                WriteLn;
+                WriteString(Square[sqr].uprice);
+                WriteLn;
+                WriteString(Square[sqr].uownername);
+                WriteLn;
+ELSE 
+END;
+
+END WriteSquare;
+
+(* Main Program Begin... *)
+BEGIN
+	
+	ReadSquare(sqr);
+	FindSquare(sqr);
+	WriteSquare(sqr);
+
+END Monopoly.
+
+ 

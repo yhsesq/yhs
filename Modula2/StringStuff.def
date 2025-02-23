@@ -1,0 +1,19 @@
+DEFINITION MODULE StringStuff;
+
+TYPE
+	Result=(same,greater,less);
+	
+	PROCEDURE StringLen(s:ARRAY OF CHAR):CARDINAL;
+	(*Returns the length of the string s*)
+
+	PROCEDURE StringCopy(orig:ARRAY OF CHAR; 
+				VAR copy:ARRAY OF CHAR;
+				VAR success:BOOLEAN);
+	(*Copies a string from orig to copy*)
+
+	PROCEDURE StringCompare(s1,s2:ARRAY OF CHAR):Result;
+	(*Compares s1 and s2 character by character until
+	**one is found to be less than the other or they are
+	**found to be the same*)
+
+END StringStuff.

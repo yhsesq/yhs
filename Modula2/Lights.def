@@ -1,0 +1,24 @@
+DEFINITION MODULE Lights;
+
+TYPE
+	State = (on,off);
+	TrafficLight = POINTER TO LightType;
+	LightType =	RECORD
+				red,amber,green : State
+			END; (*LightType*)
+	
+	PROCEDURE Create(VAR tl:TrafficLight);
+
+	PROCEDURE Dispose(VAR tl:TrafficLight);
+
+	PROCEDURE Stop(VAR tl:TrafficLight);
+
+	PROCEDURE PreStop(VAR tl:TrafficLight);
+
+	PROCEDURE PreGo(VAR tl:TrafficLight);
+
+	PROCEDURE Go(VAR tl:TrafficLight);
+
+	PROCEDURE Display(tl:TrafficLight);
+
+END Lights.

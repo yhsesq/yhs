@@ -1,0 +1,12 @@
+DEFINITION MODULE Game;
+
+IMPORT Player;
+IMPORT Board;
+IMPORT Die;
+
+PROCEDURE PlayGame(VAR Dice : Die.DieType; VAR Squares : Board.BoardRec; VAR Players : Player.PlayerRec; VAR pno : INTEGER);
+(* Input : Takes player records
+** Output : Plays the game
+*)
+
+END Game.
